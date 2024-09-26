@@ -1,0 +1,60 @@
+site_name: Concord - Contrastive Learning for Cross-domain Reconciliation and Discovery
+theme:
+  name: material
+  logo: 'images/logo.png'
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      accent: lime
+
+nav:
+  - Getting started: index.md
+  - The Concord Framework: framework.md
+  - Tutorials: tutorials.md
+  - Advanced usage: advanced.md
+  - Other utilities: utilities.md
+  - About: about.md
+
+plugins:
+  - social
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/Gartner-Lab/Concord
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+
+copyright: |
+  &copy; 2023 <a href="https://github.com/Gartner-Lab"  target="_blank" rel="noopener">Gartner Lab</a>
