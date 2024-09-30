@@ -28,19 +28,30 @@ theme:
 nav:
   - Getting started: index.md
   - The Concord Framework: framework.md
-  - Tutorials: tutorials.md
+  - Tutorials: 
+    - Single batch, RNA-seq:
+      - PBMC3k dataset, single batch: notebooks/concord_pbmc3k.ipynb
+    - Multiple batch, RNA-seq:
+      - Intestine development by Huycke et al.: notebooks/concord_Huycke.ipynb
+      - Mouse organogenesis (100k cell subset) by Cao et al.: notebooks/concord_mouse_organogenesis_100k.ipynb
   - Advanced usage: advanced.md
-  - Other utilities: utilities.md
+  - API: api.md
   - About: about.md
 
 plugins:
   - social
   - search
+  - mkdocs-jupyter:
+      include_source: True
+      include_requirejs: True
 
 extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/Gartner-Lab/Concord
+
+extra_javascript:
+  - https://cdn.plot.ly/plotly-2.35.2.min.js
 
 markdown_extensions:
   - pymdownx.highlight:

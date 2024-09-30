@@ -1,4 +1,4 @@
-# Quick start
+# Getting started ![Alt text](images/logo.png){ width=80, height=80 }
 
 ## Description
 
@@ -72,6 +72,9 @@ Concord integrates with **VisCello**, a tool for interactive visualization. To e
 
 ## Quick Start
 
+The ipython notebook of this example can be found at Tutorial: PBMC3k dataset, single batch.
+
+### Run Concord
 Concord seamlessly works with `anndata` objects. Here’s an example run:
 
 ```python
