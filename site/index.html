@@ -313,7 +313,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="notebooks/simulation_trajectory_full/" class="md-tabs__link">
+        <a href="notebooks/simulation_trajectory_show/" class="md-tabs__link">
           
   
   Advanced usage
@@ -331,16 +331,17 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="api/" class="md-tabs__link">
-        
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="api/main/" class="md-tabs__link">
+          
   
   API
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -443,7 +444,9 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of Contents">
   
   
   
@@ -452,7 +455,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Table of Contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -472,75 +475,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-clone-the-concord-repository-and-set-up-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Clone the Concord repository and set up environment:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-install-pytorch" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Install PyTorch:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-install-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Install dependencies:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-install-concord" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Install Concord:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-optional-install-faiss-for-accelerated-knn-search-not-recommended-for-mac" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. (Optional) Install FAISS for accelerated KNN search (not recommended for Mac):
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-optional-install-optional-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. (Optional) Install optional dependencies:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-optional-integration-with-viscello" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. (Optional) Integration with VisCello:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -549,39 +483,6 @@
       Quick Start
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-concord" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run Concord
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#visualize-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize Results:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3d-visualization" class="md-nav__link">
-    <span class="md-ellipsis">
-      3D Visualization:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -909,7 +810,7 @@
         
   
   <span class="md-ellipsis">
-    Mouse organogenesis (100k subset)
+    Mouse organogenesis (100k subset for tutorial)
     
   </span>
   
@@ -1028,11 +929,11 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/simulation_trajectory_full/" class="md-nav__link">
+      <a href="notebooks/simulation_trajectory_show/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Simulation using Concord
+    Trajectory simulation
     
   </span>
   
@@ -1064,9 +965,26 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="api/" class="md-nav__link">
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     API
@@ -1074,7 +992,107 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concord
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/plotting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1191,8 +1209,7 @@
 
 <h1 id="getting-started">Getting started <img alt="Alt text" height="80" src="images/logo.png" width="80," /></h1>
 <h2 id="description">Description</h2>
-<p>CONCORD (COntrastive learNing for Cross-dOmain Reconciliation and Discovery) is a novel machine learning framework that leverages contrastive learning, masked autoencoders, and a unique batch construction strategy using data-aware sampling. CONCORD learns an encoding of cells that captures the cell state manifold, revealing both local and global structures. The resulting high-resolution atlas of cell states and trajectories is coherent across different domains, such as batches, technologies, and species. </p>
-<p><strong>Full Documentation available at [insert documentation link].</strong></p>
+<p>Resolving the structure of the gene expression manifold from single cell RNA sequencing (scRNAseq) experiments remains an outstanding challenge, compounded by noise in scRNA-seq data and systematic discrepancies—often referred to as batch effects—across experimental systems and replicates. To address this, we introduce <strong>CONCORD (COntrastive learNing for Cross-dOmain Reconciliation and Discovery)</strong>. The core innovation behind CONCORD is a probabilistic, dataset- and neighborhood-aware sampling strategy that dramatically improves performance of <strong>dimension reduction</strong> and <strong>data integration</strong> on single cell data compared to existing methods. Operated in a one-shot, fully unsupervised manner, CONCORD generates <strong>denoised cell embeddings</strong> that capture key <strong>topological and geometric features</strong> of the underlying biological manifold, revealing fine-grained local detail while preserving a coherent global structure. The resulting high-resolution atlas of cell states and trajectories is coherent across different datasets, such as experimental batches, technologies, and species. Moreover, these embeddings can be interpreted as context-dependent biological programs, facilitating the analysis of the regulatory mechanisms driving cell state transitions and subpopulation heterogeneity. We demonstrate the utility of CONCORD on a range of topological structures and biological contexts, underscoring its potential to yield new insights from both existing and future single-cell datasets.</p>
 <hr />
 <h2 id="installation">Installation</h2>
 <h3 id="1-clone-the-concord-repository-and-set-up-environment">1. Clone the Concord repository and set up environment:</h3>
@@ -1358,7 +1375,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate", "navigation.top", "navigation.sticky", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.expand", "navigation.mobile", "content.full_width"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate", "navigation.top", "navigation.sticky", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.expand", "navigation.mobile", "navigation.instant", "content.full_width"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>

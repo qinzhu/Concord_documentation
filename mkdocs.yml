@@ -16,6 +16,7 @@ theme:
     - content.code.copy
     - navigation.expand
     - navigation.mobile
+    - navigation.instant
     - content.full_width
   language: en
   palette:
@@ -44,8 +45,12 @@ nav:
       - Mouse organogenesis (100k cell subset) by Cao et al.: notebooks/concord_mouse_organogenesis_100k.ipynb
   - Advanced usage: 
     - Simulation pipeline: 
-      - Trajectory simulation: notebooks/simulation_trajectory_full.ipynb
-  - API: api.md
+      - Trajectory simulation: notebooks/simulation_trajectory_show.ipynb
+  - API: 
+    - Concord: api/main.md
+    - Model: api/model.md
+    - Utility: api/utils.md
+    - Plotting: api/plotting.md
   - About:
     - Citation & Feedback: about.md
     - License: LICENSE.md
@@ -91,6 +96,10 @@ markdown_extensions:
   - attr_list
   - pymdownx.tabbed:
       alternate_style: true
+  - toc:
+      permalink: false
+      title: "Table of Contents"
+      toc_depth: 2 
 
 copyright: |
   &copy; 2025 <a href="https://github.com/Gartner-Lab"  target="_blank" rel="noopener">Gartner Lab</a>

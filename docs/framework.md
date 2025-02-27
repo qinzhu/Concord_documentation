@@ -14,7 +14,7 @@ Beyond its core functionality, CONCORD supports additional tasks such as cell ty
 
 Moreover, CONCORD offers tools for creating publication-quality visualizations.
 
-## What makes CONCORD powerful?
+## What Makes CONCORD Powerful?
 
 CONCORD introduces a novel contrastive learning framework designed to denoise and reveal the intricate structure of the cellular state manifold across one or multiple datasets. Its core innovation lies in its **probabilistic sampling framework**, which seamlessly integrates two strategies:
 
