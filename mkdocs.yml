@@ -36,7 +36,6 @@ nav:
   - Galleries: 
     - C.elegans/C.briggsae Embryogenesis Atlas: galleries/cbce_show.md
     - Intestine development Atlas: galleries/huycke_show.md
-  - The CONCORD Framework: framework.md
   - Tutorials: 
     - Single batch, RNA-seq:
       - PBMC3k dataset, single batch: notebooks/concord_pbmc3k.ipynb

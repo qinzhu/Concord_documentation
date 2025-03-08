@@ -19,6 +19,20 @@
 
 ::: Concord.utils.benchmark_geometry
 
+::: Concord.utils.pairwise_distance
+
+::: Concord.utils.local_vs_distal_corr
+
+::: Concord.utils.compute_state_batch_distance_ratio
+
+::: Concord.utils.compute_trustworthiness
+
+::: Concord.utils.Simulation
+
+::: Concord.utils.select_features
+
+::: Concord.utils.generate_synthetic_doublets
+
 ::: Concord.utils.list_adata_files
 
 ::: Concord.utils.read_and_concatenate_adata
@@ -33,6 +47,6 @@
 
 ::: Concord.utils.subset_adata_to_obsm_indices
 
-::: Concord.utils.get_adata_basis
+::: Concord.utils.anndata_to_viscello
 
-::: Concord.utils.compute_meta_attributes
+::: Concord.utils.update_clist_with_subsets

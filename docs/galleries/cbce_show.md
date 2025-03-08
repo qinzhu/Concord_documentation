@@ -5,7 +5,7 @@
 === "Embryo Time"
     <iframe src="/galleries/cbce/cbce_embryotime.html" width="100%" height="2000px" style="border:none; display:block; margin:0 auto;"></iframe>
 
-=== "Germ layer/tissue"
+=== "Cell Class"
     <iframe src="/galleries/cbce/cbce_broad.html" width="100%" height="2000px" style="border:none; display:block; margin:0 auto;"></iframe>
 
 === "Cell Type"
@@ -16,3 +16,4 @@
 
 === "Species"
     <iframe src="/galleries/cbce/cbce_species.html" width="100%" height="2000px" style="border:none; display:block; margin:0 auto;"></iframe>
+
