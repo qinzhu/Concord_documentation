@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="galleries/cbce_show/">
+        <link rel="next" href="galleries/huycke_show/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -245,7 +245,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="galleries/cbce_show/" class="md-tabs__link">
+        <a href="galleries/huycke_show/" class="md-tabs__link">
           
   
   Galleries
@@ -536,11 +536,11 @@
   
   
     <li class="md-nav__item">
-      <a href="galleries/cbce_show/" class="md-nav__link">
+      <a href="galleries/huycke_show/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    C.elegans/C.briggsae Embryogenesis Atlas
+    Intestine development Atlas
     
   </span>
   
@@ -558,11 +558,11 @@
   
   
     <li class="md-nav__item">
-      <a href="galleries/huycke_show/" class="md-nav__link">
+      <a href="galleries/cbce_show/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Intestine development Atlas
+    C.elegans/C.briggsae Embryogenesis Atlas
     
   </span>
   
@@ -1171,13 +1171,13 @@
 
 <h1 id="getting-started">Getting started <img alt="Alt text" height="80" src="images/logo.png" width="80," /></h1>
 <h2 id="description">Description</h2>
-<p>Resolving the structure of the gene expression manifold from single cell RNA sequencing (scRNAseq) experiments remains an outstanding challenge, compounded by noise in scRNA-seq data and systematic discrepancies—often referred to as batch effects—across experimental systems and replicates. To address this, we introduce <strong>CONCORD (COntrastive learNing for Cross-dOmain Reconciliation and Discovery)</strong>. The core innovation behind CONCORD is a probabilistic, dataset- and neighborhood-aware sampling strategy that dramatically improves performance of <strong>dimension reduction</strong> and <strong>data integration</strong> on single cell data compared to existing methods. Operated in a one-shot, fully unsupervised manner, CONCORD generates <strong>denoised cell embeddings</strong> that capture key <strong>topological and geometric features</strong> of the underlying biological manifold, revealing fine-grained local detail while preserving a coherent global structure. The resulting high-resolution atlas of cell states and trajectories is coherent across different datasets, such as experimental batches, technologies, and species. Moreover, these embeddings can be interpreted as context-dependent biological programs, facilitating the analysis of the regulatory mechanisms driving cell state transitions and subpopulation heterogeneity. We demonstrate the utility of CONCORD on a range of topological structures and biological contexts, underscoring its potential to yield new insights from both existing and future single-cell datasets.</p>
+<p>Resolving the intricate structure of the cellular state landscape from single-cell RNA sequencing (scRNAseq) experiments remains an outstanding challenge, compounded by technical noise and systematic discrepancies—often referred to as batch effects—across experimental systems and replicate. To address this, we introduce CONCORD (COntrastive learNing for Cross-dOmain Reconciliation and Discovery), a self-supervised contrastive learning framework designed for robust <strong>dimensionality reduction</strong> and <strong>data integration</strong> in single-cell analysis. The core innovation of CONCORD lies in its probabilistic, dataset- and neighborhood-aware sampling strategy, which enhances contrastive learning by simultaneously improving the resolution of cell states and mitigating batch artifacts. Operated in a fully unsupervised manner, CONCORD generates <strong>denoised cell encodings</strong> that faithfully preserve key biological structures, from fine-grained distinctions among closely related cell states to large-scale topological organizations. The resulting high-resolution cell atlas seamlessly integrates data across experimental batches, technologies, and species. Additionally, CONCORD’s latent space capture biologically meaningful <strong>gene programs</strong>, enabling the exploration of regulatory mechanisms underlying cell state transitions and subpopulation heterogeneity. We demonstrate the utility of CONCORD on a range of topological structures and biological contexts, underscoring its potential to extract meaningful insights from both existing and future single-cell datasets.</p>
 <hr />
 <h2 id="installation">Installation</h2>
 <h3 id="1-clone-the-concord-repository-and-set-up-environment">1. Clone the Concord repository and set up environment:</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:Gartner-Lab/Concord.git
 </code></pre></div>
-<p>It is recommended to use conda (https://conda.io/projects/conda/en/latest/user-guide/install/index.html) to create and set up virtual environment for Concord.</p>
+<p>It is recommended to use conda (https://conda.io/projects/conda/en/latest/user-guide/install/index.html) to create and set up a virtual environment for Concord.</p>
 <h3 id="2-install-pytorch">2. Install PyTorch:</h3>
 <p>You must install the correct version of PyTorch based on your system's CUDA setup. Please follow the instructions on the <a href="https://pytorch.org/get-started/locally/">official PyTorch website</a> to install the appropriate version of PyTorch for CUDA or CPU.</p>
 <p>Example (for CPU version):
@@ -1190,8 +1190,8 @@
 </code></pre></div>
 <h3 id="4-install-concord">4. Install Concord:</h3>
 <p>Build and install Concord:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>setup.py<span class="w"> </span>sdist<span class="w"> </span>bdist_wheel
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>pip<span class="w"> </span>install<span class="w"> </span>dist/Concord-0.8.0-py3-none-any.whl
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-m<span class="w"> </span>build
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>pip<span class="w"> </span>install<span class="w"> </span>dist/Concord-0.9.0-py3-none-any.whl
 </code></pre></div>
 <h3 id="5-optional-install-faiss-for-accelerated-knn-search-not-recommended-for-mac">5. (Optional) Install FAISS for accelerated KNN search (not recommended for Mac):</h3>
 <p>Install FAISS for fast nearest-neighbor searches for large datasets. Note if you are using Mac, you should turn faiss off by specifying <code>cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, use_faiss=False, device=device)</code> when running Concord, unless you are certain faiss runs with no problem.</p>
@@ -1209,58 +1209,59 @@
 </code></pre></div></p>
 <h3 id="7-optional-integration-with-viscello">7. (Optional) Integration with VisCello:</h3>
 <p>Concord integrates with <strong>VisCello</strong>, a tool for interactive visualization. To explore results interactively, visit <a href="https://github.com/kimpenn/VisCello">VisCello GitHub</a> and refer to the full documentation for more information.</p>
+<p>You will also need the rpy2 package installed via:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rpy2
+</code></pre></div></p>
 <hr />
 <h2 id="quick-start">Quick Start</h2>
-<p>The ipython notebook of this example can be found at Tutorial: PBMC3k dataset, single batch.</p>
-<h3 id="run-concord">Run Concord</h3>
 <p>Concord seamlessly works with <code>anndata</code> objects. Here’s an example run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">Concord</span> <span class="k">as</span> <span class="nn">ccd</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">import</span> <span class="nn">torch</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">adata</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">pbmc3k_processed</span><span class="p">()</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">adata</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">to_adata</span><span class="p">()</span>  <span class="c1"># Store raw counts in adata.X, by default Concord will run standard total count normalization and log transformation internally</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># Set device to cpu or to gpu (if your torch has been set up correctly to use GPU)</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda:0&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># Select top variably expressed/accessible features for analysis (other methods besides seurat_v3 available)</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="n">feature_list</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">select_features</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_top_features</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">flavor</span><span class="o">=</span><span class="s1">&#39;seurat_v3&#39;</span><span class="p">)</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1"># Initialize Concord with an AnnData object, skip input_feature default to all features</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="n">cur_ccd</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">Concord</span><span class="p">(</span><span class="n">adata</span><span class="o">=</span><span class="n">adata</span><span class="p">,</span> <span class="n">input_feature</span><span class="o">=</span><span class="n">feature_list</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span> 
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="c1"># If integrating data across batch, simply add the domain_key argument</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="c1"># cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, domain_key=&#39;batch&#39;, device=device) </span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="c1"># Encode data, saving the latent embedding in adata.obsm[&#39;Concord&#39;]</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="n">cur_ccd</span><span class="o">.</span><span class="n">encode_adata</span><span class="p">(</span><span class="n">input_layer_key</span><span class="o">=</span><span class="s1">&#39;X_log1p&#39;</span><span class="p">,</span> <span class="n">output_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">Concord</span> <span class="k">as</span> <span class="nn">ccd</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kn">import</span> <span class="nn">torch</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">adata</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">pbmc3k_processed</span><span class="p">()</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">adata</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">to_adata</span><span class="p">()</span>  <span class="c1"># Store raw counts in adata.X, by default Concord will run standard total count normalization and log transformation internally, not necessary if you want to use your normalized data in adata.X, if so, specify &#39;X&#39; in cur_ccd.encode_adata(input_layer_key=&#39;X&#39;, output_key=&#39;Concord&#39;)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># Set device to cpu or to gpu (if your torch has been set up correctly to use GPU), for mac you can use either torch.device(&#39;mps&#39;) or torch.device(&#39;cpu&#39;)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda:0&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1"># Select top variably expressed/accessible features for analysis (other methods besides seurat_v3 available)</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="n">feature_list</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">select_features</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_top_features</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">flavor</span><span class="o">=</span><span class="s1">&#39;seurat_v3&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="c1"># Initialize Concord with an AnnData object, skip input_feature default to all features</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="n">cur_ccd</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">Concord</span><span class="p">(</span><span class="n">adata</span><span class="o">=</span><span class="n">adata</span><span class="p">,</span> <span class="n">input_feature</span><span class="o">=</span><span class="n">feature_list</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span> 
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="c1"># If integrating data across batch, simply add the domain_key argument</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="c1"># cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, domain_key=&#39;batch&#39;, device=device) </span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="c1"># Encode data, saving the latent embedding in adata.obsm[&#39;Concord&#39;]</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="n">cur_ccd</span><span class="o">.</span><span class="n">encode_adata</span><span class="p">(</span><span class="n">input_layer_key</span><span class="o">=</span><span class="s1">&#39;X_log1p&#39;</span><span class="p">,</span> <span class="n">output_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="visualize-results">Visualize Results:</h3>
 <p>We recommend using UMAP to visualize Concord embeddings:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">,</span> <span class="n">umap_key</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Plot the UMAP embeddings</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">color_by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;n_genes&#39;</span><span class="p">,</span> <span class="s1">&#39;louvain&#39;</span><span class="p">]</span> <span class="c1"># Choose which variables you want to visualize</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">ccd</span><span class="o">.</span><span class="n">pl</span><span class="o">.</span><span class="n">plot_embedding</span><span class="p">(</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">adata</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP&#39;</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="n">color_by</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">&#39;on data&#39;</span><span class="p">,</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">save_path</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP.png&#39;</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">,</span> <span class="n">umap_key</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Plot the UMAP embeddings</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">color_by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;n_genes&#39;</span><span class="p">,</span> <span class="s1">&#39;louvain&#39;</span><span class="p">]</span> <span class="c1"># Choose which variables you want to visualize</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">ccd</span><span class="o">.</span><span class="n">pl</span><span class="o">.</span><span class="n">plot_embedding</span><span class="p">(</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">adata</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP&#39;</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="n">color_by</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">&#39;on data&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">save_path</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP.png&#39;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">)</span>
 </code></pre></div>
 <h3 id="3d-visualization">3D Visualization:</h3>
 <p>For complex structures, 3D UMAP may provide better insights:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">,</span> <span class="n">umap_key</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP_3D&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Plot the 3D UMAP embeddings</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;louvain&#39;</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">ccd</span><span class="o">.</span><span class="n">pl</span><span class="o">.</span><span class="n">plot_embedding_3d</span><span class="p">(</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">adata</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP_3D&#39;</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">save_path</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP_3D.html&#39;</span><span class="p">,</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP_3D&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Plot the 3D UMAP embeddings</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;louvain&#39;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">ccd</span><span class="o">.</span><span class="n">pl</span><span class="o">.</span><span class="n">plot_embedding_3d</span><span class="p">(</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">adata</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP_3D&#39;</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">save_path</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP_3D.html&#39;</span><span class="p">,</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1000</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="citation">Citation</h2>
-<p>Concord is currently available on BioRxiv. Please cite the preprint here: [Insert citation link].</p>
+<p>Please cite the preprint here: [Insert citation link].</p>
 
 
 

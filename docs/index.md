@@ -2,7 +2,7 @@
 
 ## Description
 
-Resolving the structure of the gene expression manifold from single cell RNA sequencing (scRNAseq) experiments remains an outstanding challenge, compounded by noise in scRNA-seq data and systematic discrepancies—often referred to as batch effects—across experimental systems and replicates. To address this, we introduce **CONCORD (COntrastive learNing for Cross-dOmain Reconciliation and Discovery)**. The core innovation behind CONCORD is a probabilistic, dataset- and neighborhood-aware sampling strategy that dramatically improves performance of **dimension reduction** and **data integration** on single cell data compared to existing methods. Operated in a one-shot, fully unsupervised manner, CONCORD generates **denoised cell embeddings** that capture key **topological and geometric features** of the underlying biological manifold, revealing fine-grained local detail while preserving a coherent global structure. The resulting high-resolution atlas of cell states and trajectories is coherent across different datasets, such as experimental batches, technologies, and species. Moreover, these embeddings can be interpreted as context-dependent biological programs, facilitating the analysis of the regulatory mechanisms driving cell state transitions and subpopulation heterogeneity. We demonstrate the utility of CONCORD on a range of topological structures and biological contexts, underscoring its potential to yield new insights from both existing and future single-cell datasets.
+Resolving the intricate structure of the cellular state landscape from single-cell RNA sequencing (scRNAseq) experiments remains an outstanding challenge, compounded by technical noise and systematic discrepancies—often referred to as batch effects—across experimental systems and replicate. To address this, we introduce CONCORD (COntrastive learNing for Cross-dOmain Reconciliation and Discovery), a self-supervised contrastive learning framework designed for robust **dimensionality reduction** and **data integration** in single-cell analysis. The core innovation of CONCORD lies in its probabilistic, dataset- and neighborhood-aware sampling strategy, which enhances contrastive learning by simultaneously improving the resolution of cell states and mitigating batch artifacts. Operated in a fully unsupervised manner, CONCORD generates **denoised cell encodings** that faithfully preserve key biological structures, from fine-grained distinctions among closely related cell states to large-scale topological organizations. The resulting high-resolution cell atlas seamlessly integrates data across experimental batches, technologies, and species. Additionally, CONCORD’s latent space capture biologically meaningful **gene programs**, enabling the exploration of regulatory mechanisms underlying cell state transitions and subpopulation heterogeneity. We demonstrate the utility of CONCORD on a range of topological structures and biological contexts, underscoring its potential to extract meaningful insights from both existing and future single-cell datasets.
 
 ---
 
@@ -14,7 +14,7 @@ Resolving the structure of the gene expression manifold from single cell RNA seq
 git clone git@github.com:Gartner-Lab/Concord.git
 ```
 
-It is recommended to use conda (https://conda.io/projects/conda/en/latest/user-guide/install/index.html) to create and set up virtual environment for Concord.
+It is recommended to use conda (https://conda.io/projects/conda/en/latest/user-guide/install/index.html) to create and set up a virtual environment for Concord.
 
 ### 2. Install PyTorch:
 
@@ -38,8 +38,8 @@ pip install -r requirements.txt
 Build and install Concord:
 
 ```bash
-python setup.py sdist bdist_wheel
-pip install dist/Concord-0.8.0-py3-none-any.whl
+python -m build
+pip install dist/Concord-0.9.0-py3-none-any.whl
 ```
 
 ### 5. (Optional) Install FAISS for accelerated KNN search (not recommended for Mac):
@@ -66,13 +66,15 @@ pip install -r requirements_optional.txt
 
 Concord integrates with **VisCello**, a tool for interactive visualization. To explore results interactively, visit [VisCello GitHub](https://github.com/kimpenn/VisCello) and refer to the full documentation for more information.
 
+You will also need the rpy2 package installed via:
+```bash
+pip install rpy2
+```
+
 ---
 
 ## Quick Start
 
-The ipython notebook of this example can be found at Tutorial: PBMC3k dataset, single batch.
-
-### Run Concord
 Concord seamlessly works with `anndata` objects. Here’s an example run:
 
 ```python
@@ -81,9 +83,9 @@ import scanpy as sc
 import torch
 
 adata = sc.datasets.pbmc3k_processed()
-adata = adata.raw.to_adata()  # Store raw counts in adata.X, by default Concord will run standard total count normalization and log transformation internally
+adata = adata.raw.to_adata()  # Store raw counts in adata.X, by default Concord will run standard total count normalization and log transformation internally, not necessary if you want to use your normalized data in adata.X, if so, specify 'X' in cur_ccd.encode_adata(input_layer_key='X', output_key='Concord')
 
-# Set device to cpu or to gpu (if your torch has been set up correctly to use GPU)
+# Set device to cpu or to gpu (if your torch has been set up correctly to use GPU), for mac you can use either torch.device('mps') or torch.device('cpu')
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 # Select top variably expressed/accessible features for analysis (other methods besides seurat_v3 available)
@@ -117,7 +119,7 @@ ccd.pl.plot_embedding(
 For complex structures, 3D UMAP may provide better insights:
 
 ```python
-ccd.ul.run_umap(adata, source_key='Concord', umap_key='Concord_UMAP_3D', n_components=3, n_neighbors=15, min_dist=0.1, metric='euclidean')
+ccd.ul.run_umap(adata, source_key='Concord', result_key='Concord_UMAP_3D', n_components=3, n_neighbors=15, min_dist=0.1, metric='euclidean')
 
 # Plot the 3D UMAP embeddings
 col = 'louvain'
@@ -132,5 +134,5 @@ ccd.pl.plot_embedding_3d(
 
 ## Citation
 
-Concord is currently available on BioRxiv. Please cite the preprint here: [Insert citation link].
+Please cite the preprint here: [Insert citation link].
 

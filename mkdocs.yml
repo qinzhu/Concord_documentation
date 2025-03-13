@@ -34,8 +34,8 @@ theme:
 nav:
   - Getting started: index.md
   - Galleries: 
-    - C.elegans/C.briggsae Embryogenesis Atlas: galleries/cbce_show.md
     - Intestine development Atlas: galleries/huycke_show.md
+    - C.elegans/C.briggsae Embryogenesis Atlas: galleries/cbce_show.md
   - Tutorials: 
     - Single batch, RNA-seq:
       - PBMC3k dataset, single batch: notebooks/concord_pbmc3k.ipynb
@@ -75,7 +75,7 @@ extra:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/Gartner-Lab/Concord
   include:
-    - galleries/*.html
+    - galleries/
 
 extra_javascript:
   - https://cdn.plot.ly/plotly-2.35.2.min.js
