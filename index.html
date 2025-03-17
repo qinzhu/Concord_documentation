@@ -461,6 +461,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#optional-installations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Installations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
       Getting Started
@@ -1183,44 +1192,47 @@
 <p>Resolving the intricate structure of the cellular state landscape from single-cell RNA sequencing (scRNAseq) experiments remains an outstanding challenge, compounded by technical noise and systematic discrepancies—often referred to as batch effects—across experimental systems and replicate. To address this, we introduce <strong>CONCORD (COntrastive learNing for Cross-dOmain Reconciliation and Discovery)</strong>, a self-supervised contrastive learning framework designed for robust <strong>dimensionality reduction</strong> and <strong>data integration</strong> in single-cell analysis. The core innovation of CONCORD lies in its probabilistic, dataset- and neighborhood-aware sampling strategy, which enhances contrastive learning by simultaneously improving the resolution of cell states and mitigating batch artifacts. Operated in a fully unsupervised manner, CONCORD generates <strong>denoised cell encodings</strong> that faithfully preserve key biological structures, from fine-grained distinctions among closely related cell states to large-scale topological organizations. The resulting high-resolution cell atlas seamlessly integrates data across experimental batches, technologies, and species. Additionally, CONCORD’s latent space capture biologically meaningful <strong>gene programs</strong>, enabling the exploration of regulatory mechanisms underlying cell state transitions and subpopulation heterogeneity. We demonstrate the utility of CONCORD on a range of topological structures and biological contexts, underscoring its potential to extract meaningful insights from both existing and future single-cell datasets.</p>
 <hr />
 <h2 id="installation">Installation</h2>
-<h3 id="1-clone-the-concord-repository-and-set-up-environment">1. Clone the Concord repository and set up environment:</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:Gartner-Lab/Concord.git
-</code></pre></div>
-<p>It is recommended to use conda (https://conda.io/projects/conda/en/latest/user-guide/install/index.html) to create and set up a virtual environment for Concord.</p>
-<h3 id="2-install-pytorch">2. Install PyTorch:</h3>
-<p>You must install the correct version of PyTorch based on your system's CUDA setup. Please follow the instructions on the <a href="https://pytorch.org/get-started/locally/">official PyTorch website</a> to install the appropriate version of PyTorch for CUDA or CPU.</p>
-<p>Example (for CPU version):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio
-</code></pre></div></p>
-<h3 id="3-install-dependencies">3. Install dependencies:</h3>
-<p>Navigate to the Concord directory and install the required dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>path_to_Concord
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</code></pre></div>
-<h3 id="4-install-concord">4. Install Concord:</h3>
-<p>Build and install Concord:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-m<span class="w"> </span>build
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>pip<span class="w"> </span>install<span class="w"> </span>dist/Concord-0.9.0-py3-none-any.whl
-</code></pre></div>
-<h3 id="5-optional-install-faiss-for-accelerated-knn-search-not-recommended-for-mac">5. (Optional) Install FAISS for accelerated KNN search (not recommended for Mac):</h3>
-<p>Install FAISS for fast nearest-neighbor searches for large datasets. Note if you are using Mac, you should turn faiss off by specifying <code>cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, use_faiss=False, device=device)</code> when running Concord, unless you are certain faiss runs with no problem.</p>
+<p>It is recommended to use <a href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">conda</a> to create and set up a clean virtual environment for CONCORD.</p>
+<h3 id="1-install-pytorch"><strong>1. Install PyTorch</strong></h3>
+<p>You must install the correct version of PyTorch based on your system's CUDA setup. Follow the instructions on the <a href="https://pytorch.org/get-started/locally/">official PyTorch website</a>.</p>
 <ul>
-<li><strong>FAISS with GPU</strong>:
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>faiss_gpu
+<li><strong>For CPU:</strong>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio
 </code></pre></div></li>
-<li><strong>FAISS with CPU</strong>:
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pip<span class="w"> </span>install<span class="w"> </span>faiss_cpu
+<li><strong>For CUDA (adjust based on your GPU version):</strong>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu118
 </code></pre></div></li>
 </ul>
-<h3 id="6-optional-install-optional-dependencies">6. (Optional) Install optional dependencies:</h3>
-<p>Concord offers additional functionality through optional dependencies. You can install them via:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements_optional.txt
+<h3 id="2-install-concord-stable-or-development"><strong>2. Install CONCORD (Stable or Development)</strong></h3>
+<h4 id="stable-version-pypi"><strong>Stable Version (PyPI)</strong></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>concord-sc
+</code></pre></div>
+<h4 id="development-version-github"><strong>Development Version (GitHub)</strong></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/Gartner-Lab/Concord.git
+</code></pre></div>
+<hr />
+<h2 id="optional-installations"><strong>Optional Installations</strong></h2>
+<h3 id="recommended-enable-additional-functionalities">(Recommended) Enable Additional Functionalities</h3>
+<p>For <strong>GO enrichment, benchmarking, and R integration</strong>, install:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;concord-sc[optional]&quot;</span>
 </code></pre></div></p>
-<h3 id="7-optional-integration-with-viscello">7. (Optional) Integration with VisCello:</h3>
-<p>Concord integrates with <strong>VisCello</strong>, a tool for interactive visualization. To explore results interactively, visit <a href="https://github.com/kimpenn/VisCello">VisCello GitHub</a> and refer to the full documentation for more information.</p>
-<p>You will also need the rpy2 package installed via:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rpy2
+<h3 id="recommended-install-faiss-for-accelerated-knn-search">(Recommended) Install FAISS for Accelerated KNN Search</h3>
+<blockquote>
+<p><strong>Note:</strong> If using <strong>Mac</strong>, you may need to disable FAISS when running Concord:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">cur_ccd</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">Concord</span><span class="p">(</span><span class="n">adata</span><span class="o">=</span><span class="n">adata</span><span class="p">,</span> <span class="n">input_feature</span><span class="o">=</span><span class="n">feature_list</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
 </code></pre></div></p>
+</blockquote>
+<ul>
+<li><strong>FAISS with GPU:</strong>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>install<span class="w"> </span>faiss-gpu
+</code></pre></div></li>
+<li><strong>FAISS with CPU:</strong>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>faiss-cpu
+</code></pre></div></li>
+</ul>
+<h3 id="optional-integration-with-viscello">(Optional) Integration with VisCello</h3>
+<p>CONCORD integrates with the <strong>R package VisCello</strong>, a tool for interactive visualization.<br />
+To explore results interactively, visit <a href="https://github.com/kimpenn/VisCello">VisCello GitHub</a> for more details.</p>
 <hr />
 <h2 id="getting-started">Getting Started</h2>
 <p>Concord integrates seamlessly with <code>anndata</code> objects. 
@@ -1228,7 +1240,7 @@ Single-cell datasets, such as 10x Genomics outputs, can easily be loaded into an
 In this quick-start example, we'll demonstrate CONCORD using the <code>pbmc3k</code> dataset provided by the <code>scanpy</code> package.</p>
 <h3 id="load-package-and-data">Load package and data</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Load required packages</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">import</span> <span class="nn">Concord</span> <span class="k">as</span> <span class="nn">ccd</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">import</span> <span class="nn">concord</span> <span class="k">as</span> <span class="nn">ccd</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kn">import</span> <span class="nn">torch</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># Load and prepare example data</span>
@@ -1278,7 +1290,9 @@ In this quick-start example, we'll demonstrate CONCORD using the <code>pbmc3k</c
 <p>This project is licensed under the <strong>MIT License</strong>.<br />
 See the <a href="https://github.com/Gartner-Lab/Concord/blob/main/LICENSE.md">LICENSE</a> file for details.</p>
 <h2 id="citation">Citation</h2>
-<p>Please cite the preprint here: [Insert citation link].</p>
+<p>If you use <strong>CONCORD</strong> in your research, please cite the following preprint:</p>
+<p><strong>"Revealing a coherent cell state landscape across single-cell datasets with CONCORD"</strong><br />
+<a href="https://www.biorxiv.org/content/10.1101/2025.03.13.643146v1"><em>bioRxiv</em>, 2025</a></p>
 
 
 
