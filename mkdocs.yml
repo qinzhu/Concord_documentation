@@ -38,7 +38,7 @@ nav:
     - C.elegans/C.briggsae Embryogenesis Atlas: galleries/cbce_show.md
   - Tutorials: 
     - Single batch, RNA-seq:
-      - PBMC3k dataset, single batch: notebooks/concord_pbmc3k.ipynb
+      - PBMC3k dataset, single batch: notebooks/pbmc_tutorial.ipynb
     - Multiple batch, RNA-seq:
       - Intestine development by Huycke et al.: notebooks/concord_Huycke.ipynb
       - Mouse organogenesis (100k cell subset) by Cao et al.: notebooks/concord_mouse_organogenesis_100k.ipynb
