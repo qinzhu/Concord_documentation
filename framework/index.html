@@ -1203,7 +1203,7 @@
 <h1 id="the-concord-framework">The CONCORD Framework</h1>
 <h2 id="what-does-concord-do">What Does CONCORD Do?</h2>
 <p>CONCORD addresses three foundamental challenges in single-cell data analysis — dimensionality reduction, denoising, and data integration—within a single unified framework. Operating in a fully unsupervised manner, it generates denoised, high-resolution, and batch-corrected embeddings that faithfully capture the structure of the underlying cell state landscape.</p>
-<p><img alt="State manifold" src="../images/sub1.png" width="40%" /></p>
+<p><img alt="State manifold" src="../images/sub1.png" width="60%" /></p>
 <p>In addition to its core functionality, CONCORD supports a range of downstream tasks, including cell type classification, doublet detection, cross-dataset projection, and annotation-guided representation learning. It also provides tools for simulating single-cell data and benchmarking dimensionality reduction and integration methods.</p>
 <h2 id="what-makes-concord-powerful">What Makes CONCORD Powerful?</h2>
 <p>CONCORD's core innovation lies in its <strong>mini-batch sampling framework</strong>, which introduces a novel probabilistic strategy for sampling cells into mini-batches — the basic units of machine learning training. Combined with contrastive learning, this approach enables CONCORD to achieve state-of-the-art performance without relying on deep architectures, auxiliary losses, or supervision.</p>
@@ -1211,22 +1211,22 @@
 <li>
 <p><strong>Neighborhood-Aware Sampling:</strong><br />
   Unlike conventional samplers, the neighborhood-aware sampler allows the model to explore local regions of the landscape while maintaining a global perspective. This enables the model to learn subtle distinctions among closely related cell states.</p>
-<p><img alt="Neighborhood-aware sampler" src="../images/sub2.png" width="70%" /></p>
+<p><img alt="Neighborhood-aware sampler" src="../images/sub2.png" width="90%" /></p>
 </li>
 <li>
 <p><strong>Dataset-Aware Sampling:</strong><br />
   When applied to a single dataset, contrastive learning effectively captures biological variation in the latent space: 
-  <img alt="Single dataset contrastive learning" src="../images/sub_singd.png" width="70%" /></p>
+  <img alt="Single dataset contrastive learning" src="../images/sub_singd.png" width="90%" /></p>
 <p>However, with uniform sampling across multiple datasets, both biological and dataset-specific variations are encoded, leading to latent spaces that separate by dataset as well as cell type:
-<img alt="Multi dataset contrastive learning" src="../images/sub_multid.png" width="70%" /></p>
+<img alt="Multi dataset contrastive learning" src="../images/sub_multid.png" width="90%" /></p>
 <p>To address this, we also introduce a dataset-aware sampler that restricts mini-batches to a single dataset, ensuring contrasts reflect only biological differences, as in the single-dataset setting:
-<img alt="Multi dataset CONCORD" src="../images/sub_intmulti.png" width="70%" /></p>
+<img alt="Multi dataset CONCORD" src="../images/sub_intmulti.png" width="90%" /></p>
 <p>Dataset-specific biases are further diminished through random mini-batch shuffling: if such signals are encoded in one batch, they are disrupted and overwritten by subsequent mini-batches from other datasets. Consequently, only biologically meaningful signals, such as gene co-expression patterns, persist throughout training, resulting in a latent space that reflects biological variation with minimal batch effects. Importantly, this strategy of removing batch effect imposes no assumptions on the structure of the data beyond the existence of shared biological programs across datasets.</p>
 </li>
 <li>
 <p><strong>Joint probablistic Sampling:</strong><br />
   Both the neighborhood-aware and dataset-aware samplers follow a unified principle: probabilistically structuring mini-batches to balance global biological diversity with local and dataset-specific variation. We integrate both samplers into a joint sampling framework, where the likelihood of selecting a cell satisfies both sampling schemes:</p>
-<p><img alt="CONCORD sampler" src="../images/sub4.png" width="70%" /></p>
+<p><img alt="CONCORD sampler" src="../images/sub4.png" width="90%" /></p>
 </li>
 </ul>
 <h2 id="the-concord-framework_1">The CONCORD Framework</h2>
