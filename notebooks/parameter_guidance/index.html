@@ -1942,7 +1942,7 @@ cur_ccd.encode_adata(input_layer_key='X_log1p', output_key='Concord')</div>
 <li><p><strong><code>clr_temperature</code></strong>: Controls the sharpness of the similarity distribution in the contrastive loss, as described by <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Understanding_the_Behaviour_of_Contrastive_Loss_CVPR_2021_paper.pdf">Wang &amp; Liu, 2021</a>.</p>
 <p>This parameter influences the geometry of the learned latent space. Lower temperatures increase the emphasis on distinguishing between samples, leading to tighter alignment of positive pairs and stronger repulsion of negatives. This often results in more distinct and compact representations — ideal for discrete clusters — but may lead to over-separation in datasets with continuous structures (e.g., differentiation trajectories).</p>
 <p>In contrast, higher temperatures yield smoother embeddings that better preserve gradual transitions or continuous trajectories, albeit potentially at the cost of reduced cluster separation.</p>
-<p>We recommend tuning <code>clr_temperature</code> within the range of <strong>0.1 to 0.8</strong>, with <strong>0.4</strong> serving as a robust default for most single-cell datasets.</p>
+<p>We recommend tuning <code>clr_temperature</code> within the range of <strong>0.1 to 0.8</strong>, with 0.4 serving as a robust default for most single-cell datasets.</p>
 </li>
 </ul>
 </div>
