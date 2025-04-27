@@ -2,9 +2,9 @@
   
 # Model 
 
-`model` can be replaced with `ml`, e.g., `Concord.model.ConcordModel` can be `Concord.ml.ConcordModel`
+`model` can be replaced with `ml`, e.g., `concord.model.ConcordModel` can be `concord.ml.ConcordModel`
 
-::: Concord.model.ConcordModel
+::: concord.model.ConcordModel
     handler: python
     options:
       show_root_heading: true
@@ -14,7 +14,7 @@
       show_root_full_path: false
       hidden: true
 
-::: Concord.model.ConcordSampler
+::: concord.model.ConcordSampler
     handler: python
     options:
       show_root_heading: true
@@ -24,7 +24,7 @@
       show_root_full_path: false
       hidden: true
 
-::: Concord.model.DataLoaderManager
+::: concord.model.DataLoaderManager
     handler: python
     options:
       show_root_heading: true
@@ -33,7 +33,7 @@
       show_members: false
       show_root_full_path: false
 
-::: Concord.model.chunkloader.ChunkLoader
+::: concord.model.chunkloader.ChunkLoader
     handler: python
     options:
       show_root_heading: true
@@ -43,7 +43,7 @@
       show_root_full_path: false
 
 
-::: Concord.model.AnnDataset
+::: concord.model.AnnDataset
     handler: python
     options:
       show_root_heading: true
@@ -52,7 +52,7 @@
       show_members: false
       show_root_full_path: false
 
-::: Concord.model.Trainer
+::: concord.model.Trainer
     handler: python
     options:
       show_root_heading: true
@@ -61,7 +61,7 @@
       show_members: false
       show_root_full_path: false
 
-::: Concord.model.Neighborhood
+::: concord.model.Neighborhood
     handler: python
     options:
       show_root_heading: true

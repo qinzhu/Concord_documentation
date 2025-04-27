@@ -36,12 +36,16 @@ nav:
   - Galleries: 
     - Intestine development Atlas: galleries/huycke_show.md
     - C.elegans/C.briggsae Embryogenesis Atlas: galleries/cbce_show.md
+  - Framework: framework.md 
   - Tutorials: 
     - Single batch, RNA-seq:
       - PBMC3k dataset, single batch: notebooks/pbmc_tutorial.ipynb
     - Multiple batch, RNA-seq:
+      - C. elegans Embryogenesis by Packer & Zhu et al.: notebooks/tutorial_celegans.ipynb
       - Intestine development by Huycke et al.: notebooks/concord_Huycke.ipynb
       - Mouse organogenesis (100k cell subset) by Cao et al.: notebooks/concord_mouse_organogenesis_100k.ipynb
+    - General guidance: 
+      - Hyperparameter guidance: notebooks/parameter_guidance.ipynb
   - Advanced usage: 
     - Simulation pipeline: 
       - Trajectory simulation: notebooks/simulation_trajectory_show.ipynb
@@ -63,7 +67,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: ["../Concord"]
+          paths: ["../Concord/src"]
           options:
             show_source: false  # Hide source code
             show_root_heading: true

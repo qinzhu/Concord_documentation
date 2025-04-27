@@ -4,7 +4,7 @@
 
 If you find **CONCORD** helpful for your research, please consider citing our work:
 
-📄 **[CONCORD Paper](https://example.com/concord-paper)**
+📄 **[CONCORD Paper](https://doi.org/10.1101/2025.03.13.643146)**
 
 ---
 
