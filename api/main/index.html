@@ -1403,7 +1403,7 @@ in an unsupervised manner while preserving local and global topological structur
 
 
 <h3 id="concord.Concord.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">save_dir</span><span class="o">=</span><span class="s1">&#39;save/&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">save_dir</span><span class="o">=</span><span class="s1">&#39;save/&#39;</span><span class="p">,</span> <span class="n">copy_adata</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1458,18 +1458,22 @@ in an unsupervised manner while preserving local and global topological structur
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>inplace</code>
+                <code>copy_adata</code>
             </td>
             <td>
                   <code>bool</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If True, modifies <code>adata</code> in place. Defaults to True.</p>
+                <p>If True, a copy of <code>adata</code> is made before 
+any modifications. The final results are then copied back to the
+original <code>adata</code> object. If False (default), operates directly on the 
+provided <code>adata</code> object, which is more memory-efficient but may
+alter it (e.g., through feature subsetting).</p>
               </div>
             </td>
             <td>
-                  <code>True</code>
+                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -1501,29 +1505,6 @@ in an unsupervised manner while preserving local and global topological structur
             </td>
             <td>
                   <code>{}</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code>ValueError</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If <code>inplace</code> is set to True on a backed AnnData object.</p>
-              </div>
             </td>
           </tr>
       </tbody>
@@ -1646,7 +1627,7 @@ in an unsupervised manner while preserving local and global topological structur
 
 
 <h3 id="concord.Concord.init_model" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">init_model</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">init_model</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1703,7 +1684,7 @@ in an unsupervised manner while preserving local and global topological structur
 
 
 <h3 id="concord.Concord.init_dataloader" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">init_dataloader</span><span class="p">(</span><span class="n">input_layer_key</span><span class="o">=</span><span class="s1">&#39;X_log1p&#39;</span><span class="p">,</span> <span class="n">preprocess</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">train_frac</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">use_sampler</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">init_dataloader</span><span class="p">(</span><span class="n">adata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">train_frac</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">use_sampler</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1724,38 +1705,6 @@ in an unsupervised manner while preserving local and global topological structur
         </tr>
       </thead>
       <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>input_layer_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key in <code>adata.layers</code> to use as input. Defaults to 'X_log1p'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;X_log1p&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>preprocess</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to apply preprocessing. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
           <tr class="doc-section-item">
             <td>
                 <code>train_frac</code>
@@ -1886,7 +1835,7 @@ in an unsupervised manner while preserving local and global topological structur
 
 
 <h3 id="concord.Concord.predict" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="n">sort_by_indices</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_decoded</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decoder_domain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_latent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_class</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_class_prob</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="n">sort_by_indices</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_decoded</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decoder_domain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_class</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_class_prob</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1973,22 +1922,6 @@ in an unsupervised manner while preserving local and global topological structur
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>return_latent</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to return latent variables. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>return_class</code>
             </td>
             <td>
@@ -2051,8 +1984,78 @@ in an unsupervised manner while preserving local and global topological structur
 <div class="doc doc-object doc-function">
 
 
-<h3 id="concord.Concord.encode_adata" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">encode_adata</span><span class="p">(</span><span class="n">input_layer_key</span><span class="o">=</span><span class="s1">&#39;X_log1p&#39;</span><span class="p">,</span> <span class="n">output_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">,</span> <span class="n">preprocess</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_decoded</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decoder_domain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_latent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_class</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_class_prob</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_model</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<h3 id="concord.Concord.predict_adata" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">predict_adata</span><span class="p">(</span><span class="n">adata_new</span><span class="p">,</span> <span class="n">output_key</span><span class="o">=</span><span class="s1">&#39;Concord_pred&#39;</span><span class="p">,</span> <span class="n">return_decoded</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">domain_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decoder_domain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_class</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_class_prob</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Generates predictions for a new, unseen AnnData object using the loaded model.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>adata_new</code>
+            </td>
+            <td>
+                  <code>AnnData</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The new data to predict on.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>dict</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dictionary containing the requested outputs ('embeddings', 'decoded', etc.).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="concord.Concord.fit_transform" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">fit_transform</span><span class="p">(</span><span class="n">output_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">,</span> <span class="n">return_decoded</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decoder_domain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_class</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_class_prob</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_model</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2075,22 +2078,6 @@ in an unsupervised manner while preserving local and global topological structur
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>input_layer_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Input layer key. Defaults to 'X_log1p'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;X_log1p&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>output_key</code>
             </td>
             <td>
@@ -2103,22 +2090,6 @@ in an unsupervised manner while preserving local and global topological structur
             </td>
             <td>
                   <code>&#39;Concord&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>preprocess</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to apply preprocessing. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2151,22 +2122,6 @@ in an unsupervised manner while preserving local and global topological structur
             </td>
             <td>
                   <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>return_latent</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to return latent variables. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">

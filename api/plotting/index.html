@@ -1495,7 +1495,7 @@
 
 
 <h2 id="concord.plotting.plot_embedding" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">concord</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_embedding</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">highlight_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">highlight_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">highlight_density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">density_color</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">density_levels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">density_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">draw_path</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">text_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">yticks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colorbar_loc</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">vmax_quantile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">path_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">&#39;on data&#39;</span><span class="p">,</span> <span class="n">rasterized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">concord</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_embedding</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">highlight_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">highlight_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">highlight_density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">highlight_alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">density_color</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">density_levels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">density_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">draw_path</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">text_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">yticks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colorbar_loc</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">vmax_quantile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">path_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">&#39;on data&#39;</span><span class="p">,</span> <span class="n">legend_markerscale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">x_zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y_zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">square_zoom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rasterized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
@@ -2627,7 +2627,7 @@
 
 
 <h2 id="concord.plotting.plot_embedding_3d" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">concord</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_embedding_3d</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;encoded_UMAP&#39;</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="s1">&#39;batch&#39;</span><span class="p">,</span> <span class="n">pal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;plotly&#39;</span><span class="p">,</span> <span class="n">autosize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">static_format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">concord</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_embedding_3d</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;encoded_UMAP&#39;</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="s1">&#39;batch&#39;</span><span class="p">,</span> <span class="n">pal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">view_azim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">view_elev</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">view_dist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;plotly&#39;</span><span class="p">,</span> <span class="n">autosize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">static_format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span></code>
 
 </h2>
 
@@ -3785,490 +3785,30 @@ By default, it shows only the point cloud for a clean visualization.</p>
 
 
 <h2 id="concord.plotting.heatmap_with_annotations" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">concord</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">heatmap_with_annotations</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">transpose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">obs_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cluster_rows</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cluster_cols</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">add_color_legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">value_annot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title_fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">annot_fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_clustermap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cluster_method</span><span class="o">=</span><span class="s1">&#39;ward&#39;</span><span class="p">,</span> <span class="n">cluster_metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">rasterize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">concord</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">heatmap_with_annotations</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">transpose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">obs_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cluster_rows</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cluster_cols</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">add_color_legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">value_annot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title_fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">annot_fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_clustermap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cluster_method</span><span class="o">=</span><span class="s1">&#39;ward&#39;</span><span class="p">,</span> <span class="n">cluster_metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">rasterize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log_transform</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pseudocount</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">,</span> <span class="n">row_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">col_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">clip_limits</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
 
     <div class="doc doc-contents first">
 
-        <p>Creates a heatmap colored by multiple columns in <code>adata.obs</code>, optionally clusters the rows/columns, 
-and provides categorical or continuous annotations.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>adata</code>
-            </td>
-            <td>
-                  <code>AnnData</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>AnnData object containing the dataset.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>val</code>
-            </td>
-            <td>
-                  <code>str | <span title="numpy.ndarray">ndarray</span> | <span title="concord.plotting.pl_graph.pd.DataFrame">DataFrame</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Data source for heatmap. Can be:
-    - <code>'X'</code>: Uses <code>adata.X</code>
-    - A layer name from <code>adata.layers</code>
-    - An embedding from <code>adata.obsm</code>
-    - A <code>numpy.ndarray</code> or <code>pandas.DataFrame</code></p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>transpose</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If <code>True</code>, transposes the data matrix. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>obs_keys</code>
-            </td>
-            <td>
-                  <code>list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>List of column names in <code>adata.obs</code> to use for categorical or numerical coloring. Defaults to <code>None</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>cmap</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Colormap for heatmap values. Defaults to <code>'viridis'</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;viridis&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>vmin</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Minimum value for color scaling. Defaults to <code>None</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>vmax</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Maximum value for color scaling. Defaults to <code>None</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>cluster_rows</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to cluster rows. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>cluster_cols</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to cluster columns. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>pal</code>
-            </td>
-            <td>
-                  <code>dict</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Dictionary mapping category values to colors. Defaults to <code>None</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>add_color_legend</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If <code>True</code>, adds a legend for categorical annotations. Defaults to <code>False</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>value_annot</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If <code>True</code>, annotates each heatmap cell with values. Defaults to <code>False</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>title</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Title of the heatmap. Defaults to <code>None</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>title_fontsize</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Font size for title. Defaults to <code>16</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>16</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>annot_fontsize</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Font size for annotations (if <code>value_annot=True</code>). Defaults to <code>8</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>8</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>yticklabels</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to show row labels. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>xticklabels</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to show column labels. Defaults to <code>False</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>use_clustermap</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If <code>True</code>, uses <code>seaborn.clustermap</code> for hierarchical clustering. Otherwise, uses <code>sns.heatmap</code>. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>cluster_method</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Clustering method for hierarchical clustering (e.g., <code>'ward'</code>, <code>'average'</code>, <code>'single'</code>). Defaults to <code>'ward'</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;ward&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>cluster_metric</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Distance metric for hierarchical clustering (e.g., <code>'euclidean'</code>, <code>'correlation'</code>). Defaults to <code>'euclidean'</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;euclidean&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>rasterize</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If <code>True</code>, rasterizes heatmap elements for efficient plotting. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>ax</code>
-            </td>
-            <td>
-                  <code><span title="matplotlib.axes.Axes">Axes</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Matplotlib Axes object to plot on. Defaults to <code>None</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>figsize</code>
-            </td>
-            <td>
-                  <code>tuple</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Size of the figure <code>(width, height)</code>. Defaults to <code>(12, 8)</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>(12, 8)</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>seed</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Random seed for reproducibility. Defaults to <code>42</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>42</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>dpi</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Resolution of the saved figure. Defaults to <code>300</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>300</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>show</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If <code>True</code>, displays the plot. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>save_path</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Path to save the figure. If <code>None</code>, the figure is not saved. Defaults to <code>None</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>matplotlib.Axes | seaborn.ClusterGrid: 
-- If <code>use_clustermap=True</code>, returns a <code>seaborn.ClusterGrid</code> object.
-- Otherwise, returns a <code>matplotlib.Axes</code> object.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Plot a heat‑map (optionally via seaborn.clustermap) with colour bars for
+<code>adata.obs</code> columns, plus flexible transformation / scaling.</p>
+<h4 id="concord.plotting.heatmap_with_annotations--new-args">NEW ARGS</h4>
+<p>log_transform : bool
+    If True, apply log10(x + pseudocount) <strong>before</strong> any scaling.
+pseudocount   : float
+    Small value added prior to log‑transform (ignored if log_transform=False).
+row_scale     : bool
+    Z‑score across each row (genes) <em>after</em> log/clip. Mutually exclusive with
+    <code>col_scale</code>.  Equivalent to <code>t(scale(t(..)))</code> in your R helper.
+col_scale     : bool
+    Z‑score across each column (cells).  If both row_scale and col_scale are
+    True a ValueError is raised.
+clip_limits   : tuple | None
+    <code>(low, high)</code> limits applied via <code>np.clip</code> <strong>after</strong> scaling.  Use
+    <code>None</code> for one side to leave it un‑clipped, e.g. <code>(None, 3)</code>.</p>
+<p>All original parameters remain unchanged.</p>
 
     </div>
 
@@ -4309,7 +3849,7 @@ across various methods. It includes:
                 <code>df</code>
             </td>
             <td>
-                  <code><span title="concord.plotting.pl_graph.pd.DataFrame">DataFrame</span></code>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5363,158 +4903,8 @@ Displays or saves the bar charts.</p>
 
     <div class="doc doc-contents first">
 
-        <p>Generates a color mapping for a given column in <code>adata.obs</code> or for gene expression.</p>
-<p>This function determines whether the column is numeric or categorical and assigns
-an appropriate colormap (for numeric data) or a categorical color palette.</p>
+        <p>Corrected: Extract color mapping for obs or gene, safely.</p>
 
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>adata</code>
-            </td>
-            <td>
-                  <code>AnnData</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>An AnnData object containing single-cell expression data.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>col</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The column in <code>adata.obs</code> or a gene name in <code>adata.var_names</code> to be used for coloring.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>pal</code>
-            </td>
-            <td>
-                  <code>dict, str, or None</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Color palette or colormap for categorical or numeric data.
-- If <code>dict</code>, it should map categories to colors.
-- If <code>str</code>, it should be a recognized seaborn or matplotlib palette/colormap.
-- If <code>None</code>, defaults to 'Set1' for categorical data and 'viridis' for numeric data.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>seed</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Random seed for reproducibility when shuffling colors in categorical mapping. Defaults to <code>42</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>42</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p><code>(data_col, cmap, palette)</code>
-- <code>data_col</code> (pd.Series or np.ndarray): The extracted column data from <code>adata.obs</code> or <code>adata[:, col].X</code>.
-- <code>cmap</code> (matplotlib.colors.Colormap or None): A colormap for numeric data. Returns <code>None</code> for categorical data.
-- <code>palette</code> (dict or None): A dictionary mapping categorical values to colors. Returns <code>None</code> for numeric data.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code>ValueError</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the column is neither found in <code>adata.obs</code> nor in <code>adata.var_names</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                  <code>ValueError</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If a numeric column is provided with a categorical palette (dict).</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<details class="example" open>
-  <summary>Example</summary>
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">data_col</span><span class="p">,</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">get_color_mapping</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="s1">&#39;batch&#39;</span><span class="p">,</span> <span class="n">pal</span><span class="o">=</span><span class="s1">&#39;Set2&#39;</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">data_col</span><span class="p">,</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">get_color_mapping</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="s1">&#39;GeneX&#39;</span><span class="p">,</span> <span class="n">pal</span><span class="o">=</span><span class="s1">&#39;RdYlBu&#39;</span><span class="p">)</span>
-</code></pre></div>
-</details>
     </div>
 
 </div>
@@ -6071,202 +5461,15 @@ an appropriate colormap (for numeric data) or a categorical color palette.</p>
 
 
 <h2 id="concord.plotting.plot_trustworthiness" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">concord</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_trustworthiness</span><span class="p">(</span><span class="n">trustworthiness_df</span><span class="p">,</span> <span class="n">text_label</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text_shift</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">legend_fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">concord</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_trustworthiness</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">text_shift</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_gap</span><span class="o">=</span><span class="mf">0.015</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">line_kw</span><span class="p">)</span></code>
 
 </h2>
 
 
     <div class="doc doc-contents first">
 
-        <p>Plots trustworthiness scores for different latent embeddings over a range of neighborhood sizes.</p>
+        <p>Plot trustworthiness curves for each embedding in <em>df</em>.</p>
 
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>trustworthiness_df</code>
-            </td>
-            <td>
-                  <code><span title="concord.plotting.pl_graph.pd.DataFrame">DataFrame</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>DataFrame containing columns <code>Embedding</code>, <code>n_neighbors</code>, and <code>Trustworthiness</code>.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>text_label</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to display text labels for the last data point of each embedding. Defaults to <code>True</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>text_shift</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Horizontal shift applied to text labels for readability. Defaults to <code>1</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>1</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>legend</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to show a legend on the right. Defaults to <code>False</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>fontsize</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Font size for plot labels. Defaults to <code>8</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>8</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>legend_fontsize</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Font size for legend text. Defaults to <code>8</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>8</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>figsize</code>
-            </td>
-            <td>
-                  <code>tuple</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Figure size in inches (width, height). Defaults to <code>(6, 4)</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>(6, 4)</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>dpi</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Resolution (dots per inch) for saving the figure. Defaults to <code>300</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>300</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>save_path</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>File path to save the figure. If <code>None</code>, the plot is displayed instead. Defaults to <code>None</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>None</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<details class="example" open>
-  <summary>Example</summary>
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot_trustworthiness</span><span class="p">(</span><span class="n">trustworthiness_df</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;trustworthiness_plot.png&quot;</span><span class="p">)</span>
-</code></pre></div>
-</details>
     </div>
 
 </div>
@@ -6521,7 +5724,7 @@ an appropriate colormap (for numeric data) or a categorical color palette.</p>
                 <code>correlation</code>
             </td>
             <td>
-                  <code><span title="concord.plotting.pl_graph.pd.DataFrame">DataFrame</span></code>
+                  <code><span title="concord.plotting.pl_benchmark.pd.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7602,7 +6805,7 @@ save_path : str, optional
                 <code>betti_stats_pivot</code>
             </td>
             <td>
-                  <code><span title="concord.plotting.pl_graph.pd.DataFrame">DataFrame</span></code>
+                  <code><span title="concord.plotting.pl_benchmark.pd.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7806,7 +7009,7 @@ save_path : str, optional
                 <code>distance_metrics_df</code>
             </td>
             <td>
-                  <code><span title="concord.plotting.pl_graph.pd.DataFrame">DataFrame</span></code>
+                  <code><span title="concord.plotting.pl_benchmark.pd.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
