@@ -1355,8 +1355,7 @@
 
 
         <p>A contrastive learning model for domain-aware and covariate-aware latent representations.</p>
-<p>This model consists of an encoder, decoder, and optional classifier head. It supports 
-probabilistic augmentation and domain/covariate embeddings.</p>
+<p>This model consists of an encoder, decoder, and optional classifier head. </p>
 
 
 <p><span class="doc-section-title">Attributes:</span></p>
@@ -1388,17 +1387,6 @@ probabilistic augmentation and domain/covariate embeddings.</p>
             <td>
               <div class="doc-md-description">
                 <p>Input feature dimension.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordModel.augmentation_mask">augmentation_mask</span></code></td>
-            <td>
-                  <code><span title="torch.nn.Dropout">Dropout</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Dropout layer for augmentation masking.</p>
               </div>
             </td>
           </tr>
@@ -1504,7 +1492,7 @@ probabilistic augmentation and domain/covariate embeddings.</p>
 
 
 <h3 id="concord.model.ConcordModel.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">num_domains</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">domain_embedding_dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">covariate_embedding_dims</span><span class="o">=</span><span class="p">{},</span> <span class="n">covariate_num_categories</span><span class="o">=</span><span class="p">{},</span> <span class="n">encoder_dims</span><span class="o">=</span><span class="p">[],</span> <span class="n">decoder_dims</span><span class="o">=</span><span class="p">[],</span> <span class="n">augmentation_mask_prob</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">dropout_prob</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="s1">&#39;layer_norm&#39;</span><span class="p">,</span> <span class="n">use_decoder</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">decoder_final_activation</span><span class="o">=</span><span class="s1">&#39;leaky_relu&#39;</span><span class="p">,</span> <span class="n">use_classifier</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_importance_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">num_domains</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">domain_embedding_dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">covariate_embedding_dims</span><span class="o">=</span><span class="p">{},</span> <span class="n">covariate_num_categories</span><span class="o">=</span><span class="p">{},</span> <span class="n">encoder_dims</span><span class="o">=</span><span class="p">[],</span> <span class="n">decoder_dims</span><span class="o">=</span><span class="p">[],</span> <span class="n">dropout_prob</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="s1">&#39;layer_norm&#39;</span><span class="p">,</span> <span class="n">use_decoder</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">decoder_final_activation</span><span class="o">=</span><span class="s1">&#39;leaky_relu&#39;</span><span class="p">,</span> <span class="n">use_classifier</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_importance_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1671,22 +1659,6 @@ probabilistic augmentation and domain/covariate embeddings.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>augmentation_mask_prob</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Dropout probability for augmentation mask. Defaults to 0.3.</p>
-              </div>
-            </td>
-            <td>
-                  <code>0.3</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
                 <code>dropout_prob</code>
             </td>
             <td>
@@ -1698,7 +1670,7 @@ probabilistic augmentation and domain/covariate embeddings.</p>
               </div>
             </td>
             <td>
-                  <code>0.1</code>
+                  <code>0.0</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -1809,7 +1781,7 @@ probabilistic augmentation and domain/covariate embeddings.</p>
 
 
 <h3 id="concord.model.ConcordModel.forward" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">forward</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">domain_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_tensors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_latent</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">forward</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">domain_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_tensors</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1878,22 +1850,6 @@ probabilistic augmentation and domain/covariate embeddings.</p>
                   <code>None</code>
             </td>
           </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>return_latent</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to return latent layer outputs.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
       </tbody>
     </table>
 
@@ -1936,6 +1892,92 @@ probabilistic augmentation and domain/covariate embeddings.</p>
     <div class="doc doc-contents ">
 
         <p>Freezes encoder weights to prevent updates during training.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="concord.model.ConcordModel.get_embeddings" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_embeddings</span><span class="p">(</span><span class="n">domain_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_tensors</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Retrieves embeddings for the specified domain labels and covariate tensors.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>domain_labels</code>
+            </td>
+            <td>
+                  <code><span title="torch.Tensor">Tensor</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Domain labels for embedding lookup.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>covariate_tensors</code>
+            </td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dictionary of covariate tensors.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>torch.Tensor: Concatenated embeddings.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
     </div>
 
@@ -2074,130 +2116,6 @@ neighborhood-aware batch sampling for contrastive learning.</p>
 distributions based on configurable probabilities.</p>
 
 
-<p><span class="doc-section-title">Attributes:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.batch_size">batch_size</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of samples per batch.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.p_intra_knn">p_intra_knn</span></code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of selecting samples from k-NN neighborhoods.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.p_intra_domain_dict">p_intra_domain_dict</span></code></td>
-            <td>
-                  <code>dict</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Dictionary mapping domain indices to intra-domain probabilities.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.device">device</span></code></td>
-            <td>
-                  <code><span title="torch.device">device</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Device to store tensors (default: GPU if available).</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.domain_ids">domain_ids</span></code></td>
-            <td>
-                  <code><span title="torch.Tensor">Tensor</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Tensor containing domain labels for each sample.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.neighborhood">neighborhood</span></code></td>
-            <td>
-                  <code><a class="autorefs autorefs-internal" title="concord.model.knn.Neighborhood" href="#concord.model.Neighborhood">Neighborhood</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Precomputed k-NN index.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.unique_domains">unique_domains</span></code></td>
-            <td>
-                  <code><span title="torch.Tensor">Tensor</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Unique domain categories.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.domain_counts">domain_counts</span></code></td>
-            <td>
-                  <code><span title="torch.Tensor">Tensor</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of samples per domain.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.valid_batches">valid_batches</span></code></td>
-            <td>
-                  <code>list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>List of precomputed valid batches.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.ConcordSampler.min_batch_size">min_batch_size</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Minimum allowed batch size.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
 
 
 
@@ -2219,7 +2137,7 @@ distributions based on configurable probabilities.</p>
 
 
 <h3 id="concord.model.ConcordSampler.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">domain_ids</span><span class="p">,</span> <span class="n">neighborhood</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">domain_ids</span><span class="p">,</span> <span class="n">neighborhood</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">min_batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">domain_minibatch_strategy</span><span class="o">=</span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span> <span class="n">domain_minibatch_min_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">domain_coverage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_with_replacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2306,18 +2224,18 @@ distributions based on configurable probabilities.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>p_intra_domain_dict</code>
+                <code>p_intra_domain</code>
             </td>
             <td>
                   <code>dict</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Dictionary mapping domain indices to intra-domain probabilities. Default is None.</p>
+                <p>Probability of selecting samples from the same domain.</p>
               </div>
             </td>
             <td>
-                  <code>None</code>
+                  <code>0.95</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2440,6 +2358,45 @@ distributions based on configurable probabilities.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="concord.model.ConcordSampler._calculate_num_batches_per_domain" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">_calculate_num_batches_per_domain</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculates the number of minibatches to generate for each domain based on the chosen strategy.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>dict</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dictionary mapping each domain ID to its number of batches.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="concord.model.ConcordSampler._generate_batches" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">_generate_batches</span><span class="p">()</span></code>
 
@@ -2479,8 +2436,8 @@ distributions based on configurable probabilities.</p>
 <div class="doc doc-object doc-function">
 
 
-<h3 id="concord.model.ConcordSampler.permute_nonneg_and_fill" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">permute_nonneg_and_fill</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ncol</span><span class="p">)</span></code>
+<h3 id="concord.model.ConcordSampler._permute_nonneg_and_fill" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">_permute_nonneg_and_fill</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ncol</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
@@ -2588,265 +2545,8 @@ distributions based on configurable probabilities.</p>
     <div class="doc doc-contents first">
 
 
-        <p>Manages data loading for training and evaluation, including optional sampling.</p>
-<p>This class handles embedding computation, k-NN graph construction, domain-aware 
-sampling, and splits data into train/validation sets when needed.</p>
-
-
-<p><span class="doc-section-title">Attributes:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.input_layer_key">input_layer_key</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for input layer in AnnData.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.domain_key">domain_key</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for domain labels in <code>adata.obs</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.class_key">class_key</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for class labels in <code>adata.obs</code>. Defaults to None.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.covariate_keys">covariate_keys</span></code></td>
-            <td>
-                  <code>list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>List of covariate keys in <code>adata.obs</code>. Defaults to None.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.batch_size">batch_size</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Batch size for data loading.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.train_frac">train_frac</span></code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Fraction of data used for training.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.use_sampler">use_sampler</span></code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use a custom sampler.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.sampler_emb">sampler_emb</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for embeddings used in sampling.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.sampler_knn">sampler_knn</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of k-nearest neighbors for sampling.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.p_intra_knn">p_intra_knn</span></code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of intra-cluster sampling.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.p_intra_domain">p_intra_domain</span></code></td>
-            <td>
-                  <code>float or dict</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of intra-domain sampling.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.min_p_intra_domain">min_p_intra_domain</span></code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Minimum probability for intra-domain sampling.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.max_p_intra_domain">max_p_intra_domain</span></code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Maximum probability for intra-domain sampling.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.clr_mode">clr_mode</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Contrastive learning mode.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.dist_metric">dist_metric</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Distance metric for k-NN graph.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.pca_n_comps">pca_n_comps</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of PCA components used in embedding computation.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.use_faiss">use_faiss</span></code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use FAISS for fast k-NN computation.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.use_ivf">use_ivf</span></code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use IVF indexing for FAISS.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.ivf_nprobe">ivf_nprobe</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of probes for IVF-Faiss.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.preprocess">preprocess</span></code></td>
-            <td>
-                  <code>callable</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Preprocessing function for <code>adata</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.num_cores">num_cores</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of CPU cores for parallel processing.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.DataLoaderManager.device">device</span></code></td>
-            <td>
-                  <code><span title="torch.device">device</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Device for computation (CPU or CUDA).</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Manages data loading for CONCORD, including optional preprocessing and sampling.
+This class handles the standard workflow of total-count normalization and log1p transformation.</p>
 
 
 
@@ -2870,7 +2570,7 @@ sampling, and splits data into train/validation sets when needed.</p>
 
 
 <h3 id="concord.model.DataLoaderManager.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">input_layer_key</span><span class="p">,</span> <span class="n">domain_key</span><span class="p">,</span> <span class="n">class_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">train_frac</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">use_sampler</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler_emb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sampler_knn</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_p_intra_domain</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">max_p_intra_domain</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">clr_mode</span><span class="o">=</span><span class="s1">&#39;aug&#39;</span><span class="p">,</span> <span class="n">dist_metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">pca_n_comps</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_ivf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ivf_nprobe</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">preprocess</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_cores</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">domain_key</span><span class="p">,</span> <span class="n">class_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feature_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize_total</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log1p</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">train_frac</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">use_sampler</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler_knn</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">sampler_emb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sampler_domain_minibatch_strategy</span><span class="o">=</span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span> <span class="n">domain_coverage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">dist_metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_ivf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ivf_nprobe</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">preload_dense</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2879,372 +2579,23 @@ sampling, and splits data into train/validation sets when needed.</p>
 
         <p>Initializes the DataLoaderManager.</p>
 
+    </div>
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>input_layer_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for input layer in <code>adata</code>.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>domain_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for domain labels in <code>adata.obs</code>.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>class_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for class labels. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>covariate_keys</code>
-            </td>
-            <td>
-                  <code>list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>List of covariate keys. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>batch_size</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Batch size. Defaults to 32.</p>
-              </div>
-            </td>
-            <td>
-                  <code>32</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>train_frac</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Fraction of data used for training. Defaults to 0.9.</p>
-              </div>
-            </td>
-            <td>
-                  <code>0.9</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>use_sampler</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use the custom sampler. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>sampler_emb</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for embeddings used in sampling.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>sampler_knn</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of neighbors for k-NN sampling. Defaults to 300.</p>
-              </div>
-            </td>
-            <td>
-                  <code>300</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>p_intra_knn</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of intra-cluster sampling. Defaults to 0.3.</p>
-              </div>
-            </td>
-            <td>
-                  <code>0.3</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>p_intra_domain</code>
-            </td>
-            <td>
-                  <code>float or dict</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of intra-domain sampling.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>min_p_intra_domain</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Minimum probability for intra-domain sampling. Defaults to 1.0.</p>
-              </div>
-            </td>
-            <td>
-                  <code>1.0</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>max_p_intra_domain</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Maximum probability for intra-domain sampling. Defaults to 1.0.</p>
-              </div>
-            </td>
-            <td>
-                  <code>1.0</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>clr_mode</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Contrastive learning mode. Defaults to 'aug'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;aug&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>dist_metric</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Distance metric for k-NN. Defaults to 'euclidean'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;euclidean&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>pca_n_comps</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of PCA components. Defaults to 50.</p>
-              </div>
-            </td>
-            <td>
-                  <code>50</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>use_faiss</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use FAISS. Defaults to True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>use_ivf</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use IVF-Faiss indexing. Defaults to False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>ivf_nprobe</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of probes for IVF-Faiss. Defaults to 8.</p>
-              </div>
-            </td>
-            <td>
-                  <code>8</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>preprocess</code>
-            </td>
-            <td>
-                  <code>callable</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Preprocessing function for <code>adata</code>.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>num_cores</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of CPU cores. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>device</code>
-            </td>
-            <td>
-                  <code><span title="torch.device">device</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Device for computation. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="concord.model.DataLoaderManager._get_data_structure" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">_get_data_structure</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Determines the structure of the data to be returned by the dataset.
+This logic is now owned by the manager, not the dataset.</p>
 
     </div>
 
@@ -3320,54 +2671,6 @@ sampling, and splits data into train/validation sets when needed.</p>
 
 </div>
 
-<div class="doc doc-object doc-function">
-
-
-<h3 id="concord.model.DataLoaderManager.compute_embedding_and_knn" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">compute_embedding_and_knn</span><span class="p">(</span><span class="n">emb_key</span><span class="o">=</span><span class="s1">&#39;X_pca&#39;</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Constructs a k-NN graph based on existing embedding or PCA (of not exist, compute automatically).</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>emb_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for embedding basis. Defaults to 'X_pca'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;X_pca&#39;</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
 
 
   </div>
@@ -3390,351 +2693,9 @@ sampling, and splits data into train/validation sets when needed.</p>
     <div class="doc doc-contents first">
 
 
-        <p>A class for handling large datasets in chunks for efficient training.</p>
-<p>This class manages chunk-based data loading for large single-cell datasets, 
-allowing training in smaller subsets without loading the entire dataset into memory.</p>
-
-
-<p><span class="doc-section-title">Attributes:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.adata">adata</span></code></td>
-            <td>
-                  <code>AnnData</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The annotated data matrix.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.input_layer_key">input_layer_key</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for the input layer in <code>adata</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.domain_key">domain_key</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for domain labels in <code>adata.obs</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.class_key">class_key</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for class labels in <code>adata.obs</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.covariate_keys">covariate_keys</span></code></td>
-            <td>
-                  <code>list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>List of keys for covariates in <code>adata.obs</code>.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.chunk_size">chunk_size</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The number of samples per chunk.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.batch_size">batch_size</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The batch size used for training.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.train_frac">train_frac</span></code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Fraction of data to be used for training.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.sampler_mode">sampler_mode</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Mode for sampling (e.g., 'domain').</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.sampler_knn">sampler_knn</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of nearest neighbors for k-NN-based sampling.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.emb_key">emb_key</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for embedding space used in sampling.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.use_faiss">use_faiss</span></code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use FAISS for k-NN computation.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.use_ivf">use_ivf</span></code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use an IVF FAISS index.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.ivf_nprobe">ivf_nprobe</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of probes for IVF FAISS index.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.class_weights">class_weights</span></code></td>
-            <td>
-                  <code>dict</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Weights for balancing class sampling.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.p_intra_knn">p_intra_knn</span></code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of sampling within k-NN.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.p_intra_domain">p_intra_domain</span></code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of sampling within the same domain.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.p_intra_class">p_intra_class</span></code></td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of sampling within the same class.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.drop_last">drop_last</span></code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to drop the last batch if it is smaller than batch_size.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.preprocess">preprocess</span></code></td>
-            <td>
-                  <code>callable</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Preprocessing function to apply to the dataset.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.device">device</span></code></td>
-            <td>
-                  <code><span title="torch.device">device</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Device on which to load data (CPU or CUDA).</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.total_samples">total_samples</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Total number of samples in the dataset.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.num_chunks">num_chunks</span></code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of chunks required to load the full dataset.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.indices">indices</span></code></td>
-            <td>
-                  <code><span title="numpy.ndarray">ndarray</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array of shuffled indices for chunking.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.chunkloader.ChunkLoader.data_structure">data_structure</span></code></td>
-            <td>
-                  <code>list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Structure of the dataset.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Methods:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-            <tr class="doc-section-item">
-              <td><code><a class="autorefs autorefs-internal" title="concord.model.chunkloader.ChunkLoader.__len__" href="#concord.model.chunkloader.ChunkLoader.__len__">__len__</a></code></td>
-              <td>
-                <div class="doc-md-description">
-                  <p>Returns the number of chunks.</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="doc-section-item">
-              <td><code><a class="autorefs autorefs-internal" title="concord.model.chunkloader.ChunkLoader._shuffle_indices" href="#concord.model.chunkloader.ChunkLoader._shuffle_indices">_shuffle_indices</a></code></td>
-              <td>
-                <div class="doc-md-description">
-                  <p>Randomly shuffles dataset indices.</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="doc-section-item">
-              <td><code><a class="autorefs autorefs-internal" title="concord.model.chunkloader.ChunkLoader._load_chunk" href="#concord.model.chunkloader.ChunkLoader._load_chunk">_load_chunk</a></code></td>
-              <td>
-                <div class="doc-md-description">
-                  <p>Loads a specific chunk of data.</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="doc-section-item">
-              <td><code><a class="autorefs autorefs-internal" title="concord.model.chunkloader.ChunkLoader.__iter__" href="#concord.model.chunkloader.ChunkLoader.__iter__">__iter__</a></code></td>
-              <td>
-                <div class="doc-md-description">
-                  <p>Initializes the chunk iterator.</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="doc-section-item">
-              <td><code><a class="autorefs autorefs-internal" title="concord.model.chunkloader.ChunkLoader.__next__" href="#concord.model.chunkloader.ChunkLoader.__next__">__next__</a></code></td>
-              <td>
-                <div class="doc-md-description">
-                  <p>Retrieves the next chunk of data.</p>
-                </div>
-              </td>
-            </tr>
-      </tbody>
-    </table>
+        <p>An iterator that loads and processes chunks of a large AnnData object,
+often in backed mode, for memory-efficient training.</p>
+<p>It yields a tuple of (train_dataloader, val_dataloader, chunk_indices) for each chunk.</p>
 
 
 
@@ -3758,7 +2719,7 @@ allowing training in smaller subsets without loading the entire dataset into mem
 
 
 <h3 id="concord.model.chunkloader.ChunkLoader.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">input_layer_key</span><span class="p">,</span> <span class="n">domain_key</span><span class="p">,</span> <span class="n">class_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">train_frac</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">sampler_mode</span><span class="o">=</span><span class="s1">&#39;domain&#39;</span><span class="p">,</span> <span class="n">emb_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sampler_knn</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_ivf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ivf_nprobe</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">class_weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p_intra_class</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">drop_last</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">preprocess</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">data_manager</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3788,7 +2749,7 @@ allowing training in smaller subsets without loading the entire dataset into mem
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The annotated data matrix.</p>
+                <p>The large, potentially backed AnnData object.</p>
               </div>
             </td>
             <td>
@@ -3797,66 +2758,19 @@ allowing training in smaller subsets without loading the entire dataset into mem
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>input_layer_key</code>
+                <code>data_manager</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><a class="autorefs autorefs-internal" title="concord.model.dataloader.DataLoaderManager" href="#concord.model.DataLoaderManager">DataLoaderManager</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Key for the input layer in <code>adata</code>.</p>
+                <p>A pre-initialized manager responsible for 
+                              turning an AnnData chunk into DataLoaders.</p>
               </div>
             </td>
             <td>
                 <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>domain_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for domain labels in <code>adata.obs</code>.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>class_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for class labels in <code>adata.obs</code>. Default is None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>covariate_keys</code>
-            </td>
-            <td>
-                  <code>list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>List of covariate keys in <code>adata.obs</code>. Default is None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -3868,251 +2782,11 @@ allowing training in smaller subsets without loading the entire dataset into mem
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Number of samples per chunk. Default is 10,000.</p>
+                <p>The number of observations (cells) per chunk.</p>
               </div>
             </td>
             <td>
-                  <code>10000</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>batch_size</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Batch size used in training. Default is 32.</p>
-              </div>
-            </td>
-            <td>
-                  <code>32</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>train_frac</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Fraction of data for training. Default is 0.9.</p>
-              </div>
-            </td>
-            <td>
-                  <code>0.9</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>sampler_mode</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Sampling mode ('domain', etc.). Default is "domain".</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;domain&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>emb_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for the embedding space used in sampling. Default is None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>sampler_knn</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of nearest neighbors for k-NN sampling. Default is 300.</p>
-              </div>
-            </td>
-            <td>
-                  <code>300</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>p_intra_knn</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of sampling within k-NN. Default is 0.3.</p>
-              </div>
-            </td>
-            <td>
-                  <code>0.3</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>p_intra_domain</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of sampling within the same domain. Default is 1.0.</p>
-              </div>
-            </td>
-            <td>
-                  <code>1.0</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>use_faiss</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use FAISS for k-NN. Default is True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>use_ivf</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to use an IVF FAISS index. Default is False.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>ivf_nprobe</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of probes for IVF FAISS index. Default is 8.</p>
-              </div>
-            </td>
-            <td>
-                  <code>8</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>class_weights</code>
-            </td>
-            <td>
-                  <code>dict</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Dictionary of class weights for balancing. Default is None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>p_intra_class</code>
-            </td>
-            <td>
-                  <code>float</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Probability of sampling within the same class. Default is 0.3.</p>
-              </div>
-            </td>
-            <td>
-                  <code>0.3</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>drop_last</code>
-            </td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether to drop the last batch if it is smaller than <code>batch_size</code>. Default is True.</p>
-              </div>
-            </td>
-            <td>
-                  <code>True</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>preprocess</code>
-            </td>
-            <td>
-                  <code>callable</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Function to preprocess the dataset. Default is None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>device</code>
-            </td>
-            <td>
-                  <code><span title="torch.device">device</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Device on which to load data (CPU/GPU). Default is CUDA if available.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
+                <em>required</em>
             </td>
           </tr>
       </tbody>
@@ -4133,29 +2807,7 @@ allowing training in smaller subsets without loading the entire dataset into mem
 
     <div class="doc doc-contents ">
 
-        <p>Initializes the chunk iterator.</p>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>ChunkLoader</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The chunk loader object itself.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Shuffles indices at the beginning of each epoch (iteration).</p>
 
     </div>
 
@@ -4174,28 +2826,6 @@ allowing training in smaller subsets without loading the entire dataset into mem
 
         <p>Returns the total number of chunks.</p>
 
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>int</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of chunks.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
     </div>
 
 </div>
@@ -4211,139 +2841,7 @@ allowing training in smaller subsets without loading the entire dataset into mem
 
     <div class="doc doc-contents ">
 
-        <p>Retrieves the next chunk of data.</p>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Training DataLoader, Validation DataLoader, and chunk indices.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code>StopIteration</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If all chunks have been iterated over.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="concord.model.chunkloader.ChunkLoader._load_chunk" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">_load_chunk</span><span class="p">(</span><span class="n">chunk_idx</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Loads a specific chunk of data.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>chunk_idx</code>
-            </td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Index of the chunk to load.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Training DataLoader, Validation DataLoader, and chunk indices.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="concord.model.chunkloader.ChunkLoader._shuffle_indices" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">_shuffle_indices</span><span class="p">()</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Randomly shuffles dataset indices for chunking.</p>
+        <p>Loads the next chunk into memory and processes it.</p>
 
     </div>
 
@@ -4510,17 +3008,6 @@ and covariate labels while handling sparse and dense matrices.</p>
               </div>
             </td>
           </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.AnnDataset.data_structure">data_structure</span></code></td>
-            <td>
-                  <code>list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>A list describing the dataset structure.</p>
-              </div>
-            </td>
-          </tr>
       </tbody>
     </table>
 
@@ -4545,219 +3032,15 @@ and covariate labels while handling sparse and dense matrices.</p>
 <div class="doc doc-object doc-function">
 
 
-<h3 id="concord.model.AnnDataset.__getitem__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__getitem__</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Retrieves the dataset items for the given index.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>idx</code>
-            </td>
-            <td>
-                  <code>int or list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The sample index.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>A tuple containing input data, domain labels, class labels, and covariate tensors.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
 <h3 id="concord.model.AnnDataset.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">input_layer_key</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">domain_key</span><span class="o">=</span><span class="s1">&#39;domain&#39;</span><span class="p">,</span> <span class="n">class_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">domain_key</span><span class="o">=</span><span class="s1">&#39;domain&#39;</span><span class="p">,</span> <span class="n">class_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">preload_dense</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h3>
 
 
     <div class="doc doc-contents ">
 
-        <p>Initializes the AnnDataset.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>adata</code>
-            </td>
-            <td>
-                  <code>AnnData</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The annotated dataset.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>input_layer_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key to extract input data. Defaults to 'X'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;X&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>domain_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for domain labels in <code>adata.obs</code>. Defaults to 'domain'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;domain&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>class_key</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Key for class labels in <code>adata.obs</code>. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>covariate_keys</code>
-            </td>
-            <td>
-                  <code>list</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>List of keys for covariate labels in <code>adata.obs</code>. Defaults to None.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>device</code>
-            </td>
-            <td>
-                  <code><span title="torch.device">device</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Device to store tensors (GPU or CPU). Defaults to GPU if available.</p>
-              </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code>ValueError</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If domain or class key is not found in <code>adata.obs</code>.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Initializes a lightweight AnnDataset that only manages labels and indices.</p>
 
     </div>
 
@@ -4805,99 +3088,19 @@ and covariate labels while handling sparse and dense matrices.</p>
 <div class="doc doc-object doc-function">
 
 
-<h3 id="concord.model.AnnDataset._get_data_matrix" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">_get_data_matrix</span><span class="p">()</span></code>
+<h3 id="concord.model.AnnDataset._scipy_to_torch_sparse" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">_scipy_to_torch_sparse</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
 
 </h3>
 
 
     <div class="doc doc-contents ">
 
-        <p>Retrieves the feature matrix from <code>adata</code>.</p>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>np.ndarray: The feature matrix as a NumPy array.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code>KeyError</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the specified input layer is not found.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="concord.model.AnnDataset._init_data_structure" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">_init_data_structure</span><span class="p">()</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Initializes the structure of the dataset.</p>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>list</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>A list defining the dataset structure.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Converts a Scipy sparse matrix to a PyTorch sparse COO tensor.</p>
 
     </div>
 
@@ -4963,45 +3166,6 @@ and covariate labels while handling sparse and dense matrices.</p>
             <td>
               <div class="doc-md-description">
                 <p>torch.Tensor: The class labels.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="concord.model.AnnDataset.get_data_structure" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_data_structure</span><span class="p">()</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Returns the data structure of the dataset.</p>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>list</code></td>            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>A list defining the dataset structure.</p>
               </div>
             </td>
           </tr>
@@ -5351,7 +3515,7 @@ including contrastive learning, classification, and reconstruction losses.</p>
           <tr class="doc-section-item">
             <td><code><span title="concord.model.Trainer.logger">logger</span></code></td>
             <td>
-                  <code><span title="concord.model.knn.logging.Logger">Logger</span></code>
+                  <code><span title="logging.Logger">Logger</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5422,28 +3586,6 @@ including contrastive learning, classification, and reconstruction losses.</p>
             <td>
               <div class="doc-md-description">
                 <p>Weighting factor for reconstruction loss.</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.Trainer.clr_mode">clr_mode</span></code></td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Contrastive learning mode ('aug' or 'nn').</p>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code><span title="concord.model.Trainer.use_clr">use_clr</span></code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Whether contrastive learning is enabled.</p>
               </div>
             </td>
           </tr>
@@ -5558,7 +3700,7 @@ including contrastive learning, classification, and reconstruction losses.</p>
 
 
 <h3 id="concord.model.Trainer.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_structure</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">schedule_ratio</span><span class="p">,</span> <span class="n">use_classifier</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">classifier_weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">unique_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unlabeled_class</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_decoder</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">decoder_weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">clr_mode</span><span class="o">=</span><span class="s1">&#39;aug&#39;</span><span class="p">,</span> <span class="n">clr_temperature</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">clr_weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">importance_penalty_weight</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">importance_penalty_type</span><span class="o">=</span><span class="s1">&#39;L1&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_structure</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">schedule_ratio</span><span class="p">,</span> <span class="n">augment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_classifier</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">classifier_weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">unique_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unlabeled_class</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_decoder</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">decoder_weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">clr_temperature</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">clr_weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">clr_beta</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">importance_penalty_weight</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">importance_penalty_type</span><span class="o">=</span><span class="s1">&#39;L1&#39;</span><span class="p">)</span></code>
 
 </h3>
 
@@ -5632,7 +3774,7 @@ including contrastive learning, classification, and reconstruction losses.</p>
                 <code>logger</code>
             </td>
             <td>
-                  <code><span title="concord.model.knn.logging.Logger">Logger</span></code>
+                  <code><span title="logging.Logger">Logger</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5769,22 +3911,6 @@ including contrastive learning, classification, and reconstruction losses.</p>
             </td>
             <td>
                   <code>1.0</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>clr_mode</code>
-            </td>
-            <td>
-                  <code>str</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Contrastive learning mode ('aug', 'nn'). Default is 'aug'.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;aug&#39;</code>
             </td>
           </tr>
           <tr class="doc-section-item">

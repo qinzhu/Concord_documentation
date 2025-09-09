@@ -1,6 +1,6 @@
 # 3D CONCORD UMAP of Intestine Development Atlas
 
-* Data from [Huycke, Tyler R., et al. "Patterning and folding of intestinal villi by active mesenchymal dewetting." Cell 187.12 (2024): 3072-3089](https://www.cell.com/cell/fulltext/S0092-8674(24)00465-3), visualized with 3D UMAP with CONCORD latent. Click the image to view interactive plots.
+* Data from [Huycke, Tyler R., et al., 2024](https://www.cell.com/cell/fulltext/S0092-8674(24)00465-3), visualized with 3D UMAP with CONCORD (*kNN*) latent. Click the image to view interactive plots.
 
 === "Cell cycle"
     <a href="../huycke/huycke_phase.html" target="_blank">

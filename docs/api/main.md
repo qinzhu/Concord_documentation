@@ -15,7 +15,8 @@
         - init_dataloader
         - train
         - predict
-        - encode_adata
+        - predict_adata
+        - fit_transform
         - get_domain_embeddings
         - get_covariate_embeddings
         - save_model

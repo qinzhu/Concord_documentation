@@ -2,7 +2,7 @@
 
 ## Description
 
-**Batch integration**, **denoising**, and **dimensionality reduction** remain fundamental challenges in single-cell data analysis. While many machine learning tools aim to overcome these challenges by engineering model architectures, we use a different strategy, building on the insight that optimized mini-batch sampling during training can profoundly influence learning outcomes. We present **CONCORD (COntrastive learNing for Cross-dOmain Reconciliation and Discovery)**, a self-supervised learning approach that implements a unified, probabilistic data sampling scheme combining neighborhood-aware and dataset-aware sampling: the former enhancing resolution while the latter removing batch effects. Using only a minimalist one-hidden-layer neural network and contrastive learning, CONCORD achieves state-of-the-art performance without relying on deep architectures, auxiliary losses, or supervision. It generates high-resolution cell atlases that seamlessly integrate data across batches, technologies, and species, without relying on prior assumptions about data structure. The resulting latent representations are denoised, interpretable, and biologically meaningful—capturing gene co-expression programs, resolving subtle cellular states, and preserving both local geometric relationships and global topological organization. We demonstrate CONCORD’s broad applicability across diverse datasets, establishing it as a general-purpose framework for learning unified, high-fidelity representations of cellular identity and dynamics.
+Revealing the underlying cell-state landscape from single-cell data requires overcoming the critical obstacles of **batch integration**, **denoising**, and **dimensionality reduction**. We present **CONCORD**, a unified framework that simultaneously addresses these challenges within a single self-supervised model. At its core, CONCORD implements a unified probabilistic sampling strategy that corrects batch effects via dataset-aware sampling and enhances biological resolution through hard-negative sampling. Remarkably, using only a minimalist neural network with a single hidden layer and contrastive learning, CONCORD surpasses state-of-the-art performance without relying on deep architectures, auxiliary losses, or external supervision. It seamlessly integrates data across batches, technologies, and even species to generate high-resolution cell atlases. The resulting latent representations are denoised and biologically meaningful—capturing gene co-expression programs, revealing detailed lineage trajectories, and preserving both local geometric relationships and global topological structures. We demonstrate CONCORD’s broad applicability across diverse datasets, establishing it as a general-purpose framework for learning unified, high-fidelity representations of cellular identity and dynamics.
 
 ---
 
@@ -43,7 +43,7 @@ For **GO enrichment, benchmarking, and R integration**, install:
 pip install "concord-sc[optional]"
 ```
 
-### (Recommended) Install FAISS for Accelerated KNN Search
+### (Optional) Install FAISS for Accelerated kNN mode
 > **Note:** If using **Mac**, you may need to disable FAISS when running Concord:
 > ```python
 > cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, use_faiss=False, device=device)
@@ -79,7 +79,11 @@ import scanpy as sc
 import torch
 # Load and prepare example data
 adata = sc.datasets.pbmc3k_processed()
-adata = adata.raw.to_adata()  # Store raw counts in adata.X, by default Concord will run standard total count normalization and log transformation internally, not necessary if you want to use your normalized data in adata.X, if so, specify 'X' in cur_ccd.encode_adata(input_layer_key='X', output_key='Concord')
+adata = adata.raw.to_adata()  # Assume starting from raw counts
+# (Optional) Select top variably expressed/accessible features for analysis (other methods besides seurat_v3 available)
+feature_list = ccd.ul.select_features(adata, n_top_features=2000, flavor='seurat_v3')
+sc.pp.normalize_total(adata) # Normalize counts per cell
+sc.pp.log1p(adata) # Log-transform data
 ```
 
 ### Run CONCORD:
@@ -88,17 +92,14 @@ adata = adata.raw.to_adata()  # Store raw counts in adata.X, by default Concord 
 # Set device to cpu or to gpu (if your torch has been set up correctly to use GPU), for mac you can use either torch.device('mps') or torch.device('cpu')
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-# (Optional) Select top variably expressed/accessible features for analysis (other methods besides seurat_v3 available)
-feature_list = ccd.ul.select_features(adata, n_top_features=5000, flavor='seurat_v3')
+# Initialize Concord with an AnnData object, skip input_feature to use all features, set preload_dense=False if your data is very large
+cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, device=device, preload_dense=True) 
 
-# Initialize Concord with an AnnData object, skip input_feature to use all features
-cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, device=device) 
-
-# If integrating data across batch, simply add the domain_key argument to indicate the batch key in adata.obs
-# cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, domain_key='batch', device=device) 
+# If integrate across batches, provide domain_key (a column in adata.obs that contains batch label):
+# cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, domain_key='batch', device=device, preload_dense=True) 
 
 # Encode data, saving the latent embedding in adata.obsm['Concord']
-cur_ccd.encode_adata(output_key='Concord')
+cur_ccd.fit_transform(output_key='Concord')
 ```
 
 ### Visualization:
@@ -106,7 +107,7 @@ cur_ccd.encode_adata(output_key='Concord')
 CONCORD latent embeddings can be directly used for downstream analyses such as visualization with UMAP and t-SNE or constructing k-nearest neighbor (kNN) graphs. Unlike PCA, it is important to utilize the full CONCORD latent embedding in downstream analyses, as each dimension is designed to capture meaningful and complementary aspects of the underlying data structure.
 
 ```python
-ccd.ul.run_umap(adata, source_key='Concord', result_key='Concord_UMAP', n_components=2, n_neighbors=15, min_dist=0.1, metric='euclidean')
+ccd.ul.run_umap(adata, source_key='Concord', result_key='Concord_UMAP', n_components=2, n_neighbors=30, min_dist=0.1, metric='euclidean')
 
 # Plot the UMAP embeddings
 color_by = ['n_genes', 'louvain'] # Choose which variables you want to visualize
@@ -119,9 +120,10 @@ ccd.pl.plot_embedding(
 The latent space produced by CONCORD often capture complex biological structures that may not be fully visualized in 2D projections. We recommend exploring the latent space using a 3D UMAP to more effectively capture and examine the intricacies of the data. For example:
 
 ```python
-ccd.ul.run_umap(adata, source_key='Concord', result_key='Concord_UMAP_3D', n_components=3, n_neighbors=15, min_dist=0.1, metric='euclidean')
-
+ccd.ul.run_umap(adata, source_key='Concord', result_key='Concord_UMAP_3D', n_components=3, n_neighbors=30, min_dist=0.1, metric='euclidean')
 # Plot the 3D UMAP embeddings
+import plotly.io as pio
+pio.renderers.default = 'notebook'
 col = 'louvain'
 fig = ccd.pl.plot_embedding_3d(
     adata, basis='Concord_UMAP_3D', color_by=col, 
@@ -143,4 +145,5 @@ If you use **CONCORD** in your research, please cite the following preprint:
 
 **"Revealing a coherent cell state landscape across single-cell datasets with CONCORD"**  
 [*bioRxiv*, 2025](https://www.biorxiv.org/content/10.1101/2025.03.13.643146v1)
+
 
