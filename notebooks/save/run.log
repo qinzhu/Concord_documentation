@@ -1,0 +1,3 @@
+12:53:35-concord-WARNING-_check_input_features: No input feature list provided. It is recommended to first select features using the command `concord.ul.select_features()`.
+12:53:35-concord-WARNING-_check_domain_settings: domain/batch information not found, all samples will be treated as from single domain/batch.
+12:53:35-concord-WARNING-_check_domain_settings: Only one domain found in the data. Setting p_intra_domain to 1.0.
