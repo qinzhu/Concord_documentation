@@ -38,7 +38,7 @@ nav:
     - C.elegans/C.briggsae Embryogenesis Atlas: galleries/cbce_show.md
   - Framework: framework.md 
   - Tutorials: 
-    - scRNA-seq dimension reduction:
+    - scRNA-seq minimal example:
       - PBMC3k dataset, single batch: notebooks/pbmc_tutorial.ipynb
     - scRNA-seq batch integration:
       - C. elegans Embryogenesis by Packer & Zhu et al.: notebooks/tutorial_celegans.ipynb
