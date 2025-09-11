@@ -313,10 +313,10 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../notebooks/simulation_trajectory_show/" class="md-tabs__link">
+        <a href="../../notebooks/simulation_clustereasy_classification_mode/" class="md-tabs__link">
           
   
-  Advanced usage
+  Advanced tutorials
 
         </a>
       </li>
@@ -612,7 +612,7 @@
             
   
   <span class="md-ellipsis">
-    Single batch, RNA-seq
+    scRNA-seq dimension reduction
     
   </span>
   
@@ -623,7 +623,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
-            Single batch, RNA-seq
+            scRNA-seq dimension reduction
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -685,7 +685,7 @@
             
   
   <span class="md-ellipsis">
-    Multiple batch, RNA-seq
+    scRNA-seq batch integration
     
   </span>
   
@@ -696,7 +696,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
-            Multiple batch, RNA-seq
+            scRNA-seq batch integration
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -860,7 +860,7 @@
             
   
   <span class="md-ellipsis">
-    Advanced usage
+    Advanced tutorials
     
   </span>
   
@@ -871,7 +871,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Advanced usage
+            Advanced tutorials
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -903,7 +903,7 @@
             
   
   <span class="md-ellipsis">
-    Simulation pipeline
+    Label transfer and data projection
     
   </span>
   
@@ -914,7 +914,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
-            Simulation pipeline
+            Label transfer and data projection
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -925,11 +925,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notebooks/simulation_trajectory_show/" class="md-nav__link">
+      <a href="../../notebooks/simulation_clustereasy_classification_mode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Trajectory simulation
+    Label transfer / projection on simulated cluster dataset
     
   </span>
   
@@ -2115,7 +2115,7 @@ distributions based on configurable probabilities.</p>
 
 
 <h3 id="concord.model.ConcordSampler.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">domain_ids</span><span class="p">,</span> <span class="n">neighborhood</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">min_batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">domain_minibatch_strategy</span><span class="o">=</span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span> <span class="n">domain_minibatch_min_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">domain_coverage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_with_replacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">domain_ids</span><span class="p">,</span> <span class="n">neighborhood</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">min_batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">domain_minibatch_strategy</span><span class="o">=</span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span> <span class="n">domain_minibatch_min_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">domain_coverage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_with_replacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2213,7 +2213,7 @@ distributions based on configurable probabilities.</p>
               </div>
             </td>
             <td>
-                  <code>0.95</code>
+                  <code>1.0</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2548,7 +2548,7 @@ This class handles the standard workflow of total-count normalization and log1p 
 
 
 <h3 id="concord.model.DataLoaderManager.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">domain_key</span><span class="p">,</span> <span class="n">class_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feature_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize_total</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log1p</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">train_frac</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">use_sampler</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler_knn</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">sampler_emb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sampler_domain_minibatch_strategy</span><span class="o">=</span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span> <span class="n">domain_coverage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">dist_metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_ivf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ivf_nprobe</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">preload_dense</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">domain_key</span><span class="p">,</span> <span class="n">class_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feature_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize_total</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log1p</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">train_frac</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">use_sampler</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler_knn</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">sampler_emb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sampler_domain_minibatch_strategy</span><span class="o">=</span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span> <span class="n">domain_coverage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dist_metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_ivf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ivf_nprobe</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">preload_dense</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 

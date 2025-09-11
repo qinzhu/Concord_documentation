@@ -315,10 +315,10 @@
     
     
       <li class="md-tabs__item">
-        <a href="../notebooks/simulation_trajectory_show/" class="md-tabs__link">
+        <a href="../notebooks/simulation_clustereasy_classification_mode/" class="md-tabs__link">
           
   
-  Advanced usage
+  Advanced tutorials
 
         </a>
       </li>
@@ -682,7 +682,7 @@
             
   
   <span class="md-ellipsis">
-    Single batch, RNA-seq
+    scRNA-seq dimension reduction
     
   </span>
   
@@ -693,7 +693,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
-            Single batch, RNA-seq
+            scRNA-seq dimension reduction
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -755,7 +755,7 @@
             
   
   <span class="md-ellipsis">
-    Multiple batch, RNA-seq
+    scRNA-seq batch integration
     
   </span>
   
@@ -766,7 +766,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
-            Multiple batch, RNA-seq
+            scRNA-seq batch integration
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -930,7 +930,7 @@
             
   
   <span class="md-ellipsis">
-    Advanced usage
+    Advanced tutorials
     
   </span>
   
@@ -941,7 +941,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Advanced usage
+            Advanced tutorials
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -973,7 +973,7 @@
             
   
   <span class="md-ellipsis">
-    Simulation pipeline
+    Label transfer and data projection
     
   </span>
   
@@ -984,7 +984,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
-            Simulation pipeline
+            Label transfer and data projection
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -995,11 +995,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../notebooks/simulation_trajectory_show/" class="md-nav__link">
+      <a href="../notebooks/simulation_clustereasy_classification_mode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Trajectory simulation
+    Label transfer / projection on simulated cluster dataset
     
   </span>
   
@@ -1279,12 +1279,13 @@
 <p><img alt="State manifold" src="../images/sub1.png" width="60%" /></p>
 <p>In addition to its core functionality, CONCORD supports a range of downstream tasks, including cell type classification, doublet detection, cross-dataset projection, and annotation-guided representation learning. It also provides tools for simulating single-cell data and benchmarking dimensionality reduction and integration methods.</p>
 <h2 id="what-makes-concord-powerful">What Makes CONCORD Powerful?</h2>
-<p>CONCORD's core innovation lies in its <strong>mini-batch sampling framework</strong>, which introduces a novel probabilistic strategy for sampling cells into mini-batches — the basic units of machine learning training. Combined with contrastive learning, this approach enables CONCORD to achieve state-of-the-art performance without relying on deep architectures, auxiliary losses, or supervision.</p>
+<p>CONCORD's core innovation lies in its <strong>mini-batch sampling framework</strong>, which changes the way the model sees the data. Instead of sampling cells uniformly from the data distribution, CONCORD integrates two sampling strategies: hard-negative sampling and dataset-aware sampling. The former significantly improves the resolution of cell states, while the latter allows the model to integrate across experimental batches, technologies, or even species. With a minimalistic one-hidden-layer neural network, CONCORD achieves state-of-the-art performance.</p>
+<p><img alt="CONCORD overview" src="../images/sub2.png" width="60%" /></p>
 <ul>
 <li>
-<p><strong>Neighborhood-Aware Sampling:</strong><br />
-  Unlike conventional samplers, the neighborhood-aware sampler allows the model to explore local regions of the landscape while maintaining a global perspective. This enables the model to learn subtle distinctions among closely related cell states.</p>
-<p><img alt="Neighborhood-aware sampler" src="../images/sub2.png" width="90%" /></p>
+<p><strong>Hard-negative sampling:</strong><br />
+  Unlike conventional uniform samplers, the hard-negative sampler allows the model to explore local regions of the landscape while maintaining a global perspective. This enables the model to learn subtle distinctions among closely related cell states. We implemented two modes of hard-negative sampling: the <strong><code>hcl</code></strong> mode, which implements the hard-negative sampling algorithm from Robinson et al., and the <strong><code>kNN</code></strong> mode, which explicitly samples cells from within the kNN neighborhood.</p>
+<p><img alt="Neighborhood-aware sampler" src="../images/sub3.png" width="95%" /></p>
 </li>
 <li>
 <p><strong>Dataset-Aware Sampling:</strong><br />
@@ -1299,14 +1300,12 @@
 <li>
 <p><strong>Joint probablistic Sampling:</strong><br />
   Both the neighborhood-aware and dataset-aware samplers follow a unified principle: probabilistically structuring mini-batches to balance global biological diversity with local and dataset-specific variation. We integrate both samplers into a joint sampling framework, where the likelihood of selecting a cell satisfies both sampling schemes:</p>
-<p><img alt="CONCORD sampler" src="../images/sub4.png" width="90%" /></p>
+<p><img alt="CONCORD sampler" src="../images/sub4.png" width="60%" /> </p>
 </li>
 </ul>
 <h2 id="the-concord-framework_1">The CONCORD Framework</h2>
-<p>The CONCORD framework is compatible with custom model architectures (<a href="../api/model/#concord.model.ConcordSampler">see API</a>).<br />
-In our study, we adopted a minimalist model: a single hidden-layer encoder with optional decoder and classifier heads.</p>
+<p>CONCORD supports custom model architectures, such as deep neural networks, with optional objectives like reconstruction or classification. Alternatively, you can integrate our sampler <a href="../api/model/#concord.model.ConcordSampler">see API</a> into your custom model architecture. In our study, we benchmarked a minimalistic single-hidden-layer encoder.</p>
 <p><img alt="CONCORD model" src="../images/sub5.png" width="70%" /></p>
-<p>This minimalistic, highly extensible framework scales from small to large datasets and generalizes to modalities beyond scRNA-seq.</p>
 
 
 
