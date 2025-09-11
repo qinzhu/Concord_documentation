@@ -38,17 +38,16 @@ nav:
     - C.elegans/C.briggsae Embryogenesis Atlas: galleries/cbce_show.md
   - Framework: framework.md 
   - Tutorials: 
-    - Single batch, RNA-seq:
+    - scRNA-seq dimension reduction:
       - PBMC3k dataset, single batch: notebooks/pbmc_tutorial.ipynb
-    - Multiple batch, RNA-seq:
+    - scRNA-seq batch integration:
       - C. elegans Embryogenesis by Packer & Zhu et al.: notebooks/tutorial_celegans.ipynb
       - Intestine development by Huycke et al.: notebooks/concord_Huycke.ipynb
-      - Mouse organogenesis (100k cell subset) by Cao et al.: notebooks/concord_mouse_organogenesis_100k.ipynb
     - General guidance: 
       - Hyperparameter guidance: notebooks/parameter_guidance.ipynb
-  - Advanced usage: 
-    - Simulation pipeline: 
-      - Trajectory simulation: notebooks/simulation_trajectory_show.ipynb
+  - Advanced tutorials: 
+    - Label transfer and data projection: 
+      - Label transfer on simulated cluster dataset: notebooks/simulation_clustereasy_classification_mode.ipynb
   - API: 
     - Concord: api/main.md
     - Model: api/model.md

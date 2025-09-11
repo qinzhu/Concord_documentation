@@ -12,7 +12,7 @@
         <link rel="prev" href="../concord_Huycke/">
       
       
-        <link rel="next" href="../simulation_trajectory_show/">
+        <link rel="next" href="../simulation_clustereasy_classification_mode/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -98,6 +98,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#general-hyperparameters" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -312,10 +317,10 @@
     
     
       <li class="md-tabs__item">
-        <a href="../simulation_trajectory_show/" class="md-tabs__link">
+        <a href="../simulation_clustereasy_classification_mode/" class="md-tabs__link">
           
   
-  Advanced usage
+  Advanced tutorials
 
         </a>
       </li>
@@ -615,7 +620,7 @@
             
   
   <span class="md-ellipsis">
-    Single batch, RNA-seq
+    scRNA-seq dimension reduction
     
   </span>
   
@@ -626,7 +631,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
-            Single batch, RNA-seq
+            scRNA-seq dimension reduction
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -691,7 +696,7 @@
             
   
   <span class="md-ellipsis">
-    Multiple batch, RNA-seq
+    scRNA-seq batch integration
     
   </span>
   
@@ -702,7 +707,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
-            Multiple batch, RNA-seq
+            scRNA-seq batch integration
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -740,28 +745,6 @@
   
   <span class="md-ellipsis">
     Intestine development by Huycke et al.
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concord_mouse_organogenesis_100k.ipynb" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Mouse organogenesis (100k cell subset) by Cao et al.
     
   </span>
   
@@ -840,6 +823,18 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hyperparameter guidance
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -850,6 +845,43 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of Contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-hyperparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      General hyperparameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hcl-and-knn-mode-for-hard-negative-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      HCL and kNN mode for hard-negative sampling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -899,7 +931,7 @@
             
   
   <span class="md-ellipsis">
-    Advanced usage
+    Advanced tutorials
     
   </span>
   
@@ -910,7 +942,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Advanced usage
+            Advanced tutorials
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -942,7 +974,7 @@
             
   
   <span class="md-ellipsis">
-    Simulation pipeline
+    Label transfer and data projection
     
   </span>
   
@@ -953,7 +985,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
-            Simulation pipeline
+            Label transfer and data projection
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -964,11 +996,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../simulation_trajectory_show/" class="md-nav__link">
+      <a href="../simulation_clustereasy_classification_mode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Trajectory simulation
+    Label transfer / projection on simulated cluster dataset
     
   </span>
   
@@ -1698,7 +1730,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
@@ -1737,26 +1769,29 @@ model.get_default_params()</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Concord - WARNING - No input feature list provided. It is recommended to first select features using the command `concord.ul.select_features()`.
-Concord - WARNING - domain/batch information not found, all samples will be treated as from single domain/batch.
+<pre>concord - WARNING - No input feature list provided. It is recommended to first select features using the command `concord.ul.select_features()`.
+concord - WARNING - domain/batch information not found, all samples will be treated as from single domain/batch.
+concord - WARNING - Only one domain found in the data. Setting p_intra_domain to 1.0.
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>{'seed': 0,
- 'project_name': 'concord',
  'input_feature': None,
- 'batch_size': 64,
- 'n_epochs': 10,
+ 'normalize_total': False,
+ 'log1p': False,
+ 'batch_size': 256,
+ 'n_epochs': 15,
  'lr': 0.01,
  'schedule_ratio': 0.97,
  'train_frac': 1.0,
  'latent_dim': 100,
- 'encoder_dims': [512],
- 'decoder_dims': [512],
- 'augmentation_mask_prob': 0.3,
+ 'encoder_dims': [1000],
+ 'decoder_dims': [1000],
+ 'element_mask_prob': 0.4,
+ 'feature_mask_prob': 0.3,
  'domain_key': None,
  'class_key': None,
  'domain_embedding_dim': 8,
@@ -1764,8 +1799,8 @@ Concord - WARNING - domain/batch information not found, all samples will be trea
  'use_decoder': False,
  'decoder_final_activation': 'relu',
  'decoder_weight': 1.0,
- 'clr_mode': 'aug',
- 'clr_temperature': 0.3,
+ 'clr_temperature': 0.4,
+ 'clr_beta': 1.0,
  'clr_weight': 1.0,
  'use_classifier': False,
  'classifier_weight': 1.0,
@@ -1773,21 +1808,22 @@ Concord - WARNING - domain/batch information not found, all samples will be trea
  'use_importance_mask': False,
  'importance_penalty_weight': 0,
  'importance_penalty_type': 'L1',
- 'dropout_prob': 0.1,
+ 'dropout_prob': 0.0,
  'norm_type': 'layer_norm',
- 'sampler_emb': 'X_pca',
+ 'knn_warmup_epochs': 2,
  'sampler_knn': None,
+ 'sampler_emb': None,
+ 'sampler_domain_minibatch_strategy': 'proportional',
+ 'domain_coverage': None,
  'dist_metric': 'euclidean',
- 'p_intra_knn': 0.3,
- 'p_intra_domain': 0.95,
- 'min_p_intra_domain': 0.9,
- 'max_p_intra_domain': 1.0,
- 'pca_n_comps': 50,
+ 'p_intra_knn': 0.0,
+ 'p_intra_domain': 1.0,
  'use_faiss': True,
  'use_ivf': True,
  'ivf_nprobe': 10,
  'pretrained_model': None,
- 'classifier_freeze_param': False,
+ 'preload_dense': False,
+ 'num_workers': None,
  'chunked': False,
  'chunk_size': 10000,
  'device': device(type='cpu')}</pre>
@@ -1827,48 +1863,60 @@ Concord - WARNING - domain/batch information not found, all samples will be trea
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">feature_list</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">select_features</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_top_features</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">flavor</span><span class="o">=</span><span class="s1">'seurat_v3'</span><span class="p">)</span> <span class="c1"># Loosely select features based on Seurat v3 method (so that enough information is preserved)</span>
+<span class="c1"># Make sure adata.X is log-normalized (or use your preferred normalization method) before running Concord, otherwise specify 'normalize_total': True, 'log1p': True,</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">normalize_total</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
 
 <span class="n">concord_args</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'adata'</span><span class="p">:</span> <span class="n">adata</span><span class="p">,</span>
         <span class="s1">'input_feature'</span><span class="p">:</span> <span class="n">feature_list</span><span class="p">,</span>
-        <span class="s1">'latent_dim'</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="c1"># Latent dimension size, adjust as needed</span>
+        <span class="s1">'batch_size'</span><span class="p">:</span><span class="mi">128</span><span class="p">,</span> <span class="c1"># Batch size for training, adjust as needed</span>
+        <span class="s1">'latent_dim'</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="c1"># Latent dimension size, adjust as needed</span>
         <span class="s1">'encoder_dims'</span><span class="p">:[</span><span class="mi">1000</span><span class="p">],</span> <span class="c1"># Encoder dimensions, recommended to be larger than latent_dim</span>
-        <span class="s1">'use_decoder'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="c1"># Whether to use a decoder, set to True if you want to use the decoder</span>
-        <span class="s1">'decoder_dims'</span><span class="p">:[</span><span class="mi">1000</span><span class="p">],</span> <span class="c1"># Decoder dimensions, ignored if use_decoder is False</span>
-        <span class="s1">'augmentation_mask_prob'</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="c1"># Probability of masking features, recommended to be between 0.2 and 0.6</span>
-        <span class="s1">'clr_temperature'</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="c1"># Temperature for contrastive loss, recommended to be between 0.1 and 0.8</span>
-        <span class="s1">'p_intra_knn'</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="c1"># Probability of intra-neighborhood sampling, must be less than 0.5</span>
-        <span class="s1">'sampler_knn'</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="c1"># Size of neighbohood for intra-neighborhood sampling</span>
-        <span class="s1">'p_intra_domain'</span><span class="p">:</span> <span class="mf">.95</span><span class="p">,</span> <span class="c1"># Enrichment probability for intra-domain sampling, recommended to be between 0.85 and 1.0, note the lower the value, the more dataset-specific information (may contain batch effects) is preserved</span>
-        <span class="s1">'domain_key'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="c1"># Key in adata.obs for batch labels</span>
-        <span class="s1">'verbose'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="c1"># Verbosity level, set to True for more detailed output</span>
-        <span class="s1">'inplace'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># Whether to modify adata in place, if not you need to copy the obsm out of ccd.adata</span>
-        <span class="s1">'seed'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># random seed for reproducibility</span>
+        <span class="s1">'element_mask_prob'</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="c1"># Probability of masking elements, recommended to be between 0.2 and 0.6</span>
+        <span class="s1">'feature_mask_prob'</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="c1"># Probability of masking features, recommended to be between 0.0 and 0.5</span>
+        <span class="s1">'clr_temperature'</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="c1"># Temperature for contrastive loss, recommended to be between 0.1 and 0.5</span>
+        <span class="s1">'clr_beta'</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="c1"># Weight for hcl sampling, recommended to be between 0.5 and 2.0</span>
+        <span class="s1">'p_intra_domain'</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="c1"># Enrichment probability for intra-domain sampling, recommended to be between 0.9 and 1.0, note the lower the value, the more dataset-specific information (may contain batch effects) is preserved</span>
+        <span class="s1">'n_epochs'</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="c1"># Number of epochs for training, adjust as needed</span>
+        <span class="s1">'domain_key'</span><span class="p">:</span> <span class="s1">'batch'</span><span class="p">,</span> <span class="c1"># Key in adata.obs for batch labels</span>
+        <span class="s1">'verbose'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># Verbosity level, set to True for more detailed output</span>
+        <span class="s1">'preload_dense'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># Whether to preload dense matrix, set to False for very large datasets or if using multi-worker data loading</span>
+        <span class="s1">'seed'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1"># random seed for reproducibility</span>
+        <span class="s1">'device'</span><span class="p">:</span> <span class="s1">'cpu'</span><span class="p">,</span> <span class="c1"># Device for training, can be 'cpu', 'cuda' ('cuda:0,1,...'), or 'mps'</span>
+        <span class="s1">'save_dir'</span><span class="p">:</span> <span class="s1">'../../save'</span> <span class="c1"># Directory to save the model and results</span>
     <span class="p">}</span>
 
-<span class="n">cur_ccd</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">Concord</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="o">**</span><span class="n">concord_args</span><span class="p">)</span>
-<span class="n">cur_ccd</span><span class="o">.</span><span class="n">encode_adata</span><span class="p">(</span><span class="n">input_layer_key</span><span class="o">=</span><span class="s1">'X_log1p'</span><span class="p">,</span> <span class="n">output_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">)</span>
+<span class="n">cur_ccd</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">Concord</span><span class="p">(</span><span class="o">**</span><span class="n">concord_args</span><span class="p">)</span>
+<span class="n">cur_ccd</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">output_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">feature_list = ccd.ul.select_features(adata, n_top_features=2000, flavor='seurat_v3') # Loosely select features based on Seurat v3 method (so that enough information is preserved)
+# Make sure adata.X is log-normalized (or use your preferred normalization method) before running Concord, otherwise specify 'normalize_total': True, 'log1p': True,
+sc.pp.normalize_total(adata)
+sc.pp.log1p(adata)
 
 concord_args = {
+        'adata': adata,
         'input_feature': feature_list,
-        'latent_dim': 100, # Latent dimension size, adjust as needed
+        'batch_size':128, # Batch size for training, adjust as needed
+        'latent_dim': 300, # Latent dimension size, adjust as needed
         'encoder_dims':[1000], # Encoder dimensions, recommended to be larger than latent_dim
-        'use_decoder': False, # Whether to use a decoder, set to True if you want to use the decoder
-        'decoder_dims':[1000], # Decoder dimensions, ignored if use_decoder is False
-        'augmentation_mask_prob': 0.3, # Probability of masking features, recommended to be between 0.2 and 0.6
-        'clr_temperature': 0.3, # Temperature for contrastive loss, recommended to be between 0.1 and 0.8
-        'p_intra_knn': 0.3, # Probability of intra-neighborhood sampling, must be less than 0.5
-        'sampler_knn': 300, # Size of neighbohood for intra-neighborhood sampling
-        'p_intra_domain': .95, # Enrichment probability for intra-domain sampling, recommended to be between 0.85 and 1.0, note the lower the value, the more dataset-specific information (may contain batch effects) is preserved
-        'domain_key': None, # Key in adata.obs for batch labels
-        'verbose': False, # Verbosity level, set to True for more detailed output
-        'inplace': True, # Whether to modify adata in place, if not you need to copy the obsm out of ccd.adata
-        'seed': 1, # random seed for reproducibility
+        'element_mask_prob': 0.4, # Probability of masking elements, recommended to be between 0.2 and 0.6
+        'feature_mask_prob': 0.2, # Probability of masking features, recommended to be between 0.0 and 0.5
+        'clr_temperature': 0.4, # Temperature for contrastive loss, recommended to be between 0.1 and 0.5
+        'clr_beta': 1.0, # Weight for hcl sampling, recommended to be between 0.5 and 2.0
+        'p_intra_domain': 1.0, # Enrichment probability for intra-domain sampling, recommended to be between 0.9 and 1.0, note the lower the value, the more dataset-specific information (may contain batch effects) is preserved
+        'n_epochs': 15, # Number of epochs for training, adjust as needed
+        'domain_key': 'batch', # Key in adata.obs for batch labels
+        'verbose': True, # Verbosity level, set to True for more detailed output
+        'preload_dense': True, # Whether to preload dense matrix, set to False for very large datasets or if using multi-worker data loading
+        'seed': 0, # random seed for reproducibility
+        'device': 'cpu', # Device for training, can be 'cpu', 'cuda' ('cuda:0,1,...'), or 'mps'
+        'save_dir': '../../save' # Directory to save the model and results
     }
 
-cur_ccd = ccd.Concord(adata, **concord_args)
-cur_ccd.encode_adata(input_layer_key='X_log1p', output_key='Concord')</div>
+cur_ccd = ccd.Concord(**concord_args)
+cur_ccd.fit_transform(output_key='Concord')</div>
 </div>
 </div>
 </div>
@@ -1881,7 +1929,18 @@ cur_ccd.encode_adata(input_layer_key='X_log1p', output_key='Concord')</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Below are a few key hyperparameters we recommend users pay particular attention to:</p>
+<p>Below are a few key hyperparameters we recommend users pay particular attention to (also check out supplemental figure in our paper for our hyperparameter benchmarking result):</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8ee1ff11">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="general-hyperparameters">General hyperparameters<a class="anchor-link" href="#general-hyperparameters">¶</a></h4>
 </div>
 </div>
 </div>
@@ -1894,7 +1953,7 @@ cur_ccd.encode_adata(input_layer_key='X_log1p', output_key='Concord')</div>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li><p><strong><code>input_feature</code></strong>: As highlighted in a recent study by <a href="https://doi.org/10.1038/s41592-025-02624-3">Zappia et al.</a>, feature selection can significantly influence the performance of data integration and, more broadly, dimensionality reduction. Although <strong>CONCORD</strong> is generally less sensitive to the input feature set compared to other methods, we still recommend applying mild feature selection to enrich for informative features.</p>
-<p>CONCORD supports two flavors of feature selection: the Seurat method and informative feature selection (<a href="https://doi.org/10.1182/blood.2020004801">Zhu et al., 2020</a>). See the <a href="https://qinzhu.github.io/Concord_documentation/api/utils/#concord.utils.select_features"><code>select_features</code> API</a> for details.</p>
+<p>Current CONCORD supports two flavors of feature selection: the Seurat method and informative feature selection (<a href="https://doi.org/10.1182/blood.2020004801">Zhu et al., 2020</a>). See the <a href="https://qinzhu.github.io/Concord_documentation/api/utils/#concord.utils.select_features"><code>select_features</code> API</a> for details.</p>
 <p>Note that you may also supply your own feature set—generated by any method—via the <code>feature_list</code> argument, which simply takes a list of feature names (strings).</p>
 </li>
 </ul>
@@ -1909,7 +1968,7 @@ cur_ccd.encode_adata(input_layer_key='X_log1p', output_key='Concord')</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li><strong><code>latent_dim</code></strong>: Sets the dimensionality of CONCORD’s latent space. This should be large enough to capture the biological heterogeneity in your dataset. In general, there's little downside to using a higher value — especially if you have a moderate number of cells (e.g., &gt;10,000). For instance, if your dataset contains at least 10 distinct cell types, consider setting <code>latent_dim</code> to a value above 10. In our experience, 30-50 dimensions suffice for the <a href="https://qinzhu.github.io/Concord_documentation/galleries/huycke_show/">intestinal developmental atlas</a>, while we used 300 dimensions for the <a href="https://qinzhu.github.io/Concord_documentation/galleries/cbce_show/">C. elegans and C. briggsae atlas</a> to capture variation across more than 600 lineages. Therefore, for highly heterogeneous datasets, consider increasing this value. If you do, we recommend adjusting encoder_dims to fall between the input dimension (i.e., number of genes) and the latent dimension.</li>
+<li><strong><code>latent_dim</code></strong>: Sets the dimensionality of CONCORD’s latent space. This should be large enough to capture the biological heterogeneity in your dataset. In general, there's little downside to using a moderately high value (e.g., ~30-100) — especially if you have a reasonable number of cells (e.g., &gt;10,000). For instance, if your dataset contains at least 10 distinct cell types, consider setting <code>latent_dim</code> to a value above 10. In our experience, 30-50 dimensions suffice for the <a href="https://qinzhu.github.io/Concord_documentation/galleries/huycke_show/">intestinal developmental atlas</a>, while we used 300 dimensions for the <a href="https://qinzhu.github.io/Concord_documentation/galleries/cbce_show/">C. elegans and C. briggsae atlas</a> to capture variation across more than 600 lineages. Therefore, for highly heterogeneous datasets, consider increasing this value. If you do, we recommend adjusting encoder_dims to be between the input dimension (i.e., number of genes) and the latent dimension, e.g., encoder_dims = [500].</li>
 </ul>
 </div>
 </div>
@@ -1922,10 +1981,10 @@ cur_ccd.encode_adata(input_layer_key='X_log1p', output_key='Concord')</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li><p><strong><code>augmentation_mask_prob</code></strong>: Specifies the fraction of features masked during contrastive learning. This parameter controls the level of corruption applied to each input view and has a direct impact on the balance between robustness and resolution in the learned embedding.</p>
-<p>Masking a larger fraction of genes encourages the model to rely on broader contextual signals, enabling it to learn more stable and coarse-grained co-expression programs. This typically improves robustness to noise and dropout but may reduce sensitivity to finer gene-level distinctions.</p>
+<li><p><strong><code>element_mask_prob</code></strong> and <strong><code>feature_mask_prob</code></strong>: Specifies the fraction of elements and features masked during contrastive learning. This parameter controls the level of corruption applied to each input view and has a direct impact on the balance between robustness and resolution in the learned embedding.</p>
+<p>Masking a larger fraction of genes encourages the model to rely on coarse-grained co-expression programs. This typically improves robustness to noise and dropout but may reduce sensitivity to finer gene-level distinctions.</p>
 <p>Conversely, masking fewer genes allows the model to focus on smaller co-expression modules and subtle signals, which can enhance resolution. However, it also increases the risk of overfitting to noise and reduces the variation between augmented views, potentially weakening the contrastive learning signal and requiring more training epochs for convergence.</p>
-<p>We recommend setting this value between <strong>0.2 and 0.6</strong>, which empirically works well for most single-cell datasets. Users are encouraged to tune this hyperparameter based on dataset sparsity and heterogeneity.</p>
+<p>We recommend setting <code>element_mask_prob</code> between <strong>0.2 and 0.6</strong>, and <code>feature_mask_prob</code> between <strong>0.0 and 0.4</strong> which empirically works well for most single-cell datasets. Users are encouraged to tune this hyperparameter based on dataset sparsity and heterogeneity.</p>
 </li>
 </ul>
 </div>
@@ -1942,49 +2001,111 @@ cur_ccd.encode_adata(input_layer_key='X_log1p', output_key='Concord')</div>
 <li><p><strong><code>clr_temperature</code></strong>: Controls the sharpness of the similarity distribution in the contrastive loss, as described by <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Understanding_the_Behaviour_of_Contrastive_Loss_CVPR_2021_paper.pdf">Wang &amp; Liu, 2021</a>.</p>
 <p>This parameter influences the geometry of the learned latent space. Lower temperatures increase the emphasis on distinguishing between samples, leading to tighter alignment of positive pairs and stronger repulsion of negatives. This often results in more distinct and compact representations — ideal for discrete clusters — but may lead to over-separation in datasets with continuous structures (e.g., differentiation trajectories).</p>
 <p>In contrast, higher temperatures yield smoother embeddings that better preserve gradual transitions or continuous trajectories, albeit potentially at the cost of reduced cluster separation.</p>
-<p>We recommend tuning <code>clr_temperature</code> within the range of <strong>0.1 to 1.0</strong>.</p>
+<p>We recommend experiment <code>clr_temperature</code> within the range of <strong>0.1 to 1.0</strong>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f098918f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ef08ce6b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li><p><strong><code>p_intra_knn</code></strong>: Controls the probability of sampling cells from within the same k-nearest-neighbor (KNN) neighborhood. The neighborhood size is defined by <strong><code>sampler_knn</code></strong> (default: 1/10 of the total number of cells), and neighborhoods are computed using the embedding specified by <strong><code>sampler_emb</code></strong> (default: PCA, though custom embeddings from <code>adata.obsm</code> can also be used).</p>
-<p>Higher values of <code>p_intra_knn</code> encourage the model to contrast cells from nearby states, helping it capture subtle, local differences. However, we do not recommend setting this value above <strong>0.5</strong>, as doing so may limit global sampling. Maintaining a balance between local and global sampling is important for learning both fine-grained variation and broad cell type distinctions.</p>
+<li><strong><code>batch_size</code></strong>: Increasing this value above the default (256) can substantially improve training speed. However, overly large batch sizes may degrade performance on small datasets. As a rule of thumb, set batch_size to between 1/100 and 1/1000 of your total number of cells and adjust based on your GPU memory capacity.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=76b320f3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong><code>n_epochs</code></strong>: The default value of 15 is sufficient for most cases, as CONCORD generally converges quickly. Reducing this value can decrease runtime, potentially at the cost of slightly reduced resolution. To monitor the contrastive loss convergence pattern, set <code>verbose=True</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fdd9397b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong><code>p_intra_domain</code></strong>: Controls the probability of sampling cells from within the same dataset or domain (e.g., batch, condition, technology, or species). The default value of <strong>1.0</strong> generally works well for most cases. If you want the latent representation to capture more batch-specific signals, you may reduce this value to allow more inter-dataset sampling and contrasting.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bdcc336d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="hcl-and-knn-mode-for-hard-negative-sampling">HCL and kNN mode for hard-negative sampling<a class="anchor-link" href="#hcl-and-knn-mode-for-hard-negative-sampling">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0e370ddc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>CONCORD supports two modes of hard-negative sampling: the <code>hcl</code> method from Robinson et al., and the <code>kNN</code> method implemented by us. For details, refer to the <strong>Methods</strong> section of our paper. The default mode is <code>hcl</code>, but you can specify <code>kNN</code> or a hybrid of the two (though the hybrid has not been benchmarked). The sections below describe how to configure each mode.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2288376f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong><code>hcl</code> mode</strong>: Enabled by setting a non-zero value for <strong><code>clr_beta</code></strong>, which acts as a concentration parameter. Larger values of <strong><code>clr_beta</code></strong> focus sampling on points whose embeddings are already close to the anchor (resulting in harder negatives), which can lead to refined resolution. Setting <strong><code>clr_beta</code> = 0</strong> reverts to uniform sampling. The default value is 1.0; we do not recommend values larger than 5, as they may obscure global structure.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=06b7f1dd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><p><strong><code>kNN</code> mode</strong>: Enabled by setting a non-zero value for <strong><code>p_intra_knn</code></strong>, which controls the probability of sampling cells from within the same k-nearest-neighbor (kNN) neighborhood. The neighborhood size is defined by <strong><code>sampler_knn</code></strong> (default: 1/10 of the total number of cells, capped at a maximum of 1000). Neighborhoods are computed using the embedding specified by <strong><code>sampler_emb</code></strong>.</p>
+<p>The default for <strong><code>sampler_emb</code></strong> is <code>None</code>, which means CONCORD first computes an initial embedding using only dataset-aware sampling (without hard-negative sampling) for <strong><code>knn_warmup_epochs</code></strong> epochs (default: 2). After this warmup, it switches to joint dataset-aware and hard-negative sampling. Alternatively, you can provide a custom embedding (like <code>sampler_emb</code> = 'X_pca') from <code>adata.obsm</code>.</p>
+<p>Higher values of <strong><code>p_intra_knn</code></strong> encourage the model to contrast cells from nearby states, helping capture subtle local differences. However, we do not recommend setting this value above <strong>0.5</strong>, as it may limit global sampling and hinder the model's ability to learn broad cell type distinctions.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7b3fe782">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=09ffefb0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li><strong><code>p_intra_domain</code></strong>: Controls the probability of sampling cells from within the same dataset or domain (e.g., batch, condition, technology, or species). For datasets with mild to moderate batch effects, the default value of <strong>0.95</strong> generally works well. If your data exhibit strong batch effects, consider increasing this value to <strong>1.0</strong> to avoid cross-dataset comparisons. Conversely, if you want the model to capture more batch-specific signals, you may reduce this value to allow more inter-dataset sampling and contrasting.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=abdf2820">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li><strong><code>batch_size</code></strong>: Increasing this value above the default (64) can substantially improve training speed. However, overly large batch sizes may degrade performance on small datasets. As a rule of thumb, set batch_size to between 1/100 and 1/1000 of your total number of cells, and adjust based on your GPU memory capacity.</li>
+<li><strong><code>hcl</code> and <code>kNN</code> hybrid mode</strong>: This can be enabled by setting non-zero values for both <strong><code>clr_beta</code></strong> and <strong><code>p_intra_knn</code></strong>. Note that this configuration has not been benchmarked.</li>
 </ul>
 </div>
 </div>

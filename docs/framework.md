@@ -10,12 +10,14 @@ In addition to its core functionality, CONCORD supports a range of downstream ta
 
 ## What Makes CONCORD Powerful?
 
-CONCORD's core innovation lies in its **mini-batch sampling framework**, which introduces a novel probabilistic strategy for sampling cells into mini-batches — the basic units of machine learning training. Combined with contrastive learning, this approach enables CONCORD to achieve state-of-the-art performance without relying on deep architectures, auxiliary losses, or supervision.
+CONCORD's core innovation lies in its **mini-batch sampling framework**, which changes the way the model sees the data. Instead of sampling cells uniformly from the data distribution, CONCORD integrates two sampling strategies: hard-negative sampling and dataset-aware sampling. The former significantly improves the resolution of cell states, while the latter allows the model to integrate across experimental batches, technologies, or even species. With a minimalistic one-hidden-layer neural network, CONCORD achieves state-of-the-art performance.
 
-- **Neighborhood-Aware Sampling:**  
-  Unlike conventional samplers, the neighborhood-aware sampler allows the model to explore local regions of the landscape while maintaining a global perspective. This enables the model to learn subtle distinctions among closely related cell states.
+  ![CONCORD overview](images/sub2.png){width="60%"}
 
-    ![Neighborhood-aware sampler](images/sub2.png){width="90%"}
+- **Hard-negative sampling:**  
+  Unlike conventional uniform samplers, the hard-negative sampler allows the model to explore local regions of the landscape while maintaining a global perspective. This enables the model to learn subtle distinctions among closely related cell states. We implemented two modes of hard-negative sampling: the **`hcl`** mode, which implements the hard-negative sampling algorithm from Robinson et al., and the **`kNN`** mode, which explicitly samples cells from within the kNN neighborhood.
+
+    ![Neighborhood-aware sampler](images/sub3.png){width="95%"}
 
 - **Dataset-Aware Sampling:**  
   When applied to a single dataset, contrastive learning effectively captures biological variation in the latent space: 
@@ -32,13 +34,12 @@ CONCORD's core innovation lies in its **mini-batch sampling framework**, which i
 - **Joint probablistic Sampling:**  
   Both the neighborhood-aware and dataset-aware samplers follow a unified principle: probabilistically structuring mini-batches to balance global biological diversity with local and dataset-specific variation. We integrate both samplers into a joint sampling framework, where the likelihood of selecting a cell satisfies both sampling schemes:
 
-    ![CONCORD sampler](images/sub4.png){width="90%"}
+    ![CONCORD sampler](images/sub4.png){width="60%"} 
 
 ## The CONCORD Framework
 
-The CONCORD framework is compatible with custom model architectures ([see API](../api/model/#concord.model.ConcordSampler)).  
-In our study, we adopted a minimalist model: a single hidden-layer encoder with optional decoder and classifier heads.
+CONCORD supports custom model architectures, such as deep neural networks, with optional objectives like reconstruction or classification. Alternatively, you can integrate our sampler [see API](../api/model/#concord.model.ConcordSampler) into your custom model architecture. In our study, we benchmarked a minimalistic single-hidden-layer encoder.
 
 ![CONCORD model](images/sub5.png){width="70%"}
 
-This minimalistic, highly extensible framework scales from small to large datasets and generalizes to modalities beyond scRNA-seq.
+
