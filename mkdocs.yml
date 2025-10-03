@@ -48,6 +48,8 @@ nav:
   - Advanced tutorials: 
     - Label transfer and data projection: 
       - Label transfer on simulated cluster dataset: notebooks/simulation_clustereasy_classification_mode.ipynb
+    - Latent space interpretation: 
+      - Interpreting CONCORD latent with gradient-based attribution: notebooks/pbmc_latent_explain.ipynb
   - API: 
     - Concord: api/main.md
     - Model: api/model.md
