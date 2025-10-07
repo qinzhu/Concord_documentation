@@ -45,6 +45,7 @@ nav:
       - Intestine development by Huycke et al.: notebooks/concord_Huycke.ipynb
     - General guidance: 
       - Hyperparameter guidance: notebooks/parameter_guidance.ipynb
+      - Conversion between Seurat and Anndata (R and Python): notebooks/seurat_anndata_conv.ipynb
   - Advanced tutorials: 
     - Label transfer and data projection: 
       - Label transfer on simulated cluster dataset: notebooks/simulation_clustereasy_classification_mode.ipynb
