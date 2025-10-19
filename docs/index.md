@@ -81,7 +81,7 @@ import torch
 adata = sc.datasets.pbmc3k_processed()
 adata = adata.raw.to_adata()  # Assume starting from raw counts
 # (Optional) Select top variably expressed/accessible features for analysis (other methods besides seurat_v3 available)
-feature_list = ccd.ul.select_features(adata, n_top_features=2000, flavor='seurat_v3')
+feature_list = ccd.ul.select_features(adata, n_top_features=2000, flavor='seurat_v3') # For complex dataset, increase n_top_features may be necessary
 sc.pp.normalize_total(adata) # Normalize counts per cell
 sc.pp.log1p(adata) # Log-transform data
 ```
