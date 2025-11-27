@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="galleries/huycke_show/">
+        <link rel="next" href="galleries/cbce_show/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -245,7 +245,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="galleries/huycke_show/" class="md-tabs__link">
+        <a href="galleries/cbce_show/" class="md-tabs__link">
           
   
   Galleries
@@ -571,11 +571,11 @@
   
   
     <li class="md-nav__item">
-      <a href="galleries/huycke_show/" class="md-nav__link">
+      <a href="galleries/cbce_show/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Intestine development Atlas
+    C.elegans/C.briggsae Embryogenesis Atlas
     
   </span>
   
@@ -593,11 +593,11 @@
   
   
     <li class="md-nav__item">
-      <a href="galleries/cbce_show/" class="md-nav__link">
+      <a href="galleries/huycke_show/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    C.elegans/C.briggsae Embryogenesis Atlas
+    Intestine development Atlas
     
   </span>
   
@@ -1462,9 +1462,9 @@ In this quick-start example, we'll demonstrate CONCORD using the <code>pbmc3k</c
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda:0&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Initialize Concord with an AnnData object, skip input_feature to use all features, set preload_dense=False if your data is very large</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">cur_ccd</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">Concord</span><span class="p">(</span><span class="n">adata</span><span class="o">=</span><span class="n">adata</span><span class="p">,</span> <span class="n">input_feature</span><span class="o">=</span><span class="n">feature_list</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">preload_dense</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># See below if integrating across batches</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># Provide &#39;domain_key&#39; if integrating across batches, see below</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">cur_ccd</span> <span class="o">=</span> <span class="n">ccd</span><span class="o">.</span><span class="n">Concord</span><span class="p">(</span><span class="n">adata</span><span class="o">=</span><span class="n">adata</span><span class="p">,</span> <span class="n">input_feature</span><span class="o">=</span><span class="n">feature_list</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">preload_dense</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># Encode data, saving the latent embedding in adata.obsm[&#39;Concord&#39;]</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">cur_ccd</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">output_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">)</span>
 </code></pre></div>

@@ -34,8 +34,8 @@ theme:
 nav:
   - Getting started: index.md
   - Galleries: 
-    - Intestine development Atlas: galleries/huycke_show.md
     - C.elegans/C.briggsae Embryogenesis Atlas: galleries/cbce_show.md
+    - Intestine development Atlas: galleries/huycke_show.md
   - Framework: framework.md 
   - Tutorials: 
     - scRNA-seq minimal example:
