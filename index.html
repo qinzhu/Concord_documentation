@@ -1468,8 +1468,10 @@ In this quick-start example, we'll demonstrate CONCORD using the <code>pbmc3k</c
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># Encode data, saving the latent embedding in adata.obsm[&#39;Concord&#39;]</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">cur_ccd</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">output_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p>If integrate across batches, provide domain_key (a column in adata.obs that contains batch label). Make sure to use the most granular “domain_key” to indicate batch. For example, if for each dataset there are several different experiments, then use experiment as the domain key:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a># cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, domain_key=&#39;batch&#39;, device=device, preload_dense=True) 
+<p><strong>Batch Integration</strong>: To integrate data across different batches, provide the <code>domain_key</code> parameter (the column name in adata.obs containing batch labels).</p>
+<p><strong>Best Practice</strong>: Always use the most <strong>granular</strong> label available for your <code>domain_key</code>. For example, if a dataset contains multiple experiments from different labs, species or technologies, use the experiment ID rather than broad categories like lab, species or technology. This prevents the model from learning batch effects during contrasting.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a># Not run for this example
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a># cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, domain_key=&#39;batch&#39;, device=device, preload_dense=True) 
 </code></pre></div>
 <h3 id="visualization">Visualization:</h3>
 <p>CONCORD latent embeddings can be directly used for downstream analyses such as visualization with UMAP and t-SNE or constructing k-nearest neighbor (kNN) graphs. Unlike PCA, it is important to utilize the full CONCORD latent embedding in downstream analyses, as each dimension is designed to capture meaningful and complementary aspects of the underlying data structure.</p>
