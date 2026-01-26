@@ -2643,7 +2643,7 @@ This class handles the standard workflow of total-count normalization and log1p 
 
 
 <h3 id="concord.model.DataLoaderManager.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">domain_key</span><span class="p">,</span> <span class="n">class_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feature_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize_total</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log1p</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">train_frac</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">use_sampler</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler_knn</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">sampler_emb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sampler_domain_minibatch_strategy</span><span class="o">=</span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span> <span class="n">domain_coverage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dist_metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_ivf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ivf_nprobe</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">preload_dense</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">domain_key</span><span class="p">,</span> <span class="n">class_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">covariate_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feature_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize_total</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log1p</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">train_frac</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">use_sampler</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler_knn</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">sampler_emb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sampler_domain_minibatch_strategy</span><span class="o">=</span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span> <span class="n">domain_coverage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p_intra_knn</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">p_intra_domain</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dist_metric</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_ivf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ivf_nprobe</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">preload_dense</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -4446,7 +4446,7 @@ between embeddings.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Distance metric ('euclidean' or 'cosine').</p>
+                <p>Distance metric ('cosine' or 'cosine').</p>
               </div>
             </td>
           </tr>
@@ -4475,7 +4475,7 @@ between embeddings.</p>
 
 
 <h3 id="concord.model.Neighborhood.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">emb</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_ivf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ivf_nprobe</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">emb</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">use_faiss</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_ivf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ivf_nprobe</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">)</span></code>
 
 </h3>
 
@@ -4585,11 +4585,11 @@ between embeddings.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Distance metric ('euclidean' or 'cosine'). Defaults to 'euclidean'.</p>
+                <p>Distance metric ('cosine' or 'cosine'). Defaults to 'cosine'.</p>
               </div>
             </td>
             <td>
-                  <code>&#39;euclidean&#39;</code>
+                  <code>&#39;cosine&#39;</code>
             </td>
           </tr>
       </tbody>
@@ -4643,7 +4643,7 @@ between embeddings.</p>
 
 
 <h3 id="concord.model.Neighborhood.average_knn_distance" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">average_knn_distance</span><span class="p">(</span><span class="n">core_samples</span><span class="p">,</span> <span class="n">mtx</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">distance_metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">average_knn_distance</span><span class="p">(</span><span class="n">core_samples</span><span class="p">,</span> <span class="n">mtx</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">distance_metric</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">)</span></code>
 
 </h3>
 
@@ -4659,7 +4659,7 @@ mtx : np.ndarray
 k : int, optional
     Number of neighbors to retrieve. If None, uses self.k.
 distance_metric : str
-    Distance metric to use: 'euclidean', 'set_diff', or 'drop_diff'.</p>
+    Distance metric to use: 'cosine', 'set_diff', or 'drop_diff'.</p>
 <h5 id="concord.model.Neighborhood.average_knn_distance--returns">Returns</h5>
 <p>np.ndarray
     The average distance to the k-th nearest neighbor for each sample.</p>
