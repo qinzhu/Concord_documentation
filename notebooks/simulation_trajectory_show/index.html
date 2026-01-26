@@ -2789,7 +2789,7 @@ Epoch 9 Training: 100%|██████████| 14/14 [00:00&lt;00:00, 36
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">use_rep</span> <span class="o">=</span> <span class="s1">'Concord'</span><span class="p">)</span>
-<span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">'Concord_UMAP_2D'</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">'euclidean'</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">'Concord_UMAP_2D'</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">'cosine'</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 
 <span class="n">show_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">state_key</span><span class="p">,</span> <span class="n">batch_key</span><span class="p">,</span> <span class="n">leiden_key</span><span class="p">]</span>
 <span class="n">show_basis</span> <span class="o">=</span> <span class="s1">'Concord_UMAP_2D'</span>   
@@ -2800,7 +2800,7 @@ Epoch 9 Training: 100%|██████████| 14/14 [00:00&lt;00:00, 36
 <span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-19">sc.pp.neighbors(adata, n_neighbors=30, use_rep = 'Concord')
-ccd.ul.run_umap(adata, source_key='Concord', result_key='Concord_UMAP_2D', n_components=2, n_neighbors=30, min_dist=0.5, metric='euclidean', random_state=seed)
+ccd.ul.run_umap(adata, source_key='Concord', result_key='Concord_UMAP_2D', n_components=2, n_neighbors=30, min_dist=0.5, metric='cosine', random_state=seed)
 
 show_cols = [state_key, batch_key, leiden_key]
 show_basis = 'Concord_UMAP_2D'   

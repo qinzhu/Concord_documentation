@@ -1,0 +1,2 @@
+12:32:27-concord-WARNING-_check_domain_settings: domain/batch information not found, all samples will be treated as from single domain/batch.
+12:32:27-concord-WARNING-_check_domain_settings: Only one domain found in the data. Setting p_intra_domain to 1.0.

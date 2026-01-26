@@ -3050,7 +3050,7 @@ concord - INFO - Predictions added to AnnData object with base key 'Concord'.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
@@ -3063,7 +3063,7 @@ concord - INFO - Predictions added to AnnData object with base key 'Concord'.
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">'Concord_UMAP'</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">'euclidean'</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">'Concord_UMAP'</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">'cosine'</span><span class="p">)</span>
 <span class="n">color_by</span> <span class="o">=</span> <span class="p">[</span><span class="n">state_key</span><span class="p">,</span> <span class="s1">'input_state'</span><span class="p">,</span> <span class="s1">'Concord_class_pred'</span><span class="p">]</span>
 <span class="n">ccd</span><span class="o">.</span><span class="n">pl</span><span class="o">.</span><span class="n">plot_embedding</span><span class="p">(</span>
     <span class="n">adata</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">'Concord_UMAP'</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="n">color_by</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">'on data'</span><span class="p">,</span>
@@ -3071,7 +3071,7 @@ concord - INFO - Predictions added to AnnData object with base key 'Concord'.
     <span class="n">save_path</span><span class="o">=</span><span class="n">save_dir</span> <span class="o">/</span> <span class="s1">'Concord_UMAP.png'</span>
 <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">ccd.ul.run_umap(adata, source_key='Concord', result_key='Concord_UMAP', n_components=2, n_neighbors=15, min_dist=0.1, metric='euclidean')
+<div class="clipboard-copy-txt" id="cell-11">ccd.ul.run_umap(adata, source_key='Concord', result_key='Concord_UMAP', n_components=2, n_neighbors=15, min_dist=0.1, metric='cosine')
 color_by = [state_key, 'input_state', 'Concord_class_pred']
 ccd.pl.plot_embedding(
     adata, basis='Concord_UMAP', color_by=color_by, figsize=(8, 2), dpi=600, ncols=3, font_size=6, point_size=10, legend_loc='on data',
@@ -3674,7 +3674,7 @@ concord - INFO - Predictions added to AnnData object with base key 'Concord'.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
@@ -3687,7 +3687,7 @@ concord - INFO - Predictions added to AnnData object with base key 'Concord'.
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata_train</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">'Concord_UMAP'</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">'euclidean'</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata_train</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">'Concord_UMAP'</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">'cosine'</span><span class="p">)</span>
 
 <span class="n">ccd</span><span class="o">.</span><span class="n">pl</span><span class="o">.</span><span class="n">plot_embedding</span><span class="p">(</span>
     <span class="n">adata_train</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">'Concord_UMAP'</span><span class="p">,</span> <span class="n">color_by</span><span class="o">=</span><span class="n">color_by</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">'on data'</span><span class="p">,</span>
@@ -3695,7 +3695,7 @@ concord - INFO - Predictions added to AnnData object with base key 'Concord'.
     <span class="n">save_path</span><span class="o">=</span><span class="n">save_dir</span> <span class="o">/</span> <span class="s1">'Concord_UMAP.png'</span>
 <span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">ccd.ul.run_umap(adata_train, source_key='Concord', result_key='Concord_UMAP', n_components=2, n_neighbors=15, min_dist=0.1, metric='euclidean')
+<div class="clipboard-copy-txt" id="cell-14">ccd.ul.run_umap(adata_train, source_key='Concord', result_key='Concord_UMAP', n_components=2, n_neighbors=15, min_dist=0.1, metric='cosine')
 
 ccd.pl.plot_embedding(
     adata_train, basis='Concord_UMAP', color_by=color_by, figsize=(8, 2), dpi=600, ncols=3, font_size=6, point_size=10, legend_loc='on data',
@@ -3797,7 +3797,7 @@ concord - INFO - Predictions added to AnnData object with base key 'Concord'.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
@@ -3811,7 +3811,7 @@ concord - INFO - Predictions added to AnnData object with base key 'Concord'.
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">adata_merge</span> <span class="o">=</span> <span class="n">adata_train</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">adata_pred</span><span class="p">,</span> <span class="n">batch_key</span><span class="o">=</span><span class="s1">'train_test'</span><span class="p">,</span> <span class="n">index_unique</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata_merge</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">'Concord_UMAP_2D'</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">'euclidean'</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata_merge</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">'Concord'</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">'Concord_UMAP_2D'</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">'cosine'</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
 
 <span class="n">color_by</span> <span class="o">=</span> <span class="p">[</span><span class="n">state_key</span><span class="p">,</span> <span class="s1">'input_state'</span><span class="p">,</span> <span class="s1">'Concord_class_pred'</span><span class="p">,</span> <span class="s1">'train_test'</span><span class="p">]</span>
 <span class="n">show_basis</span> <span class="o">=</span> <span class="s1">'Concord_UMAP_2D'</span>   
@@ -3822,7 +3822,7 @@ concord - INFO - Predictions added to AnnData object with base key 'Concord'.
 <span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-16">adata_merge = adata_train.concatenate(adata_pred, batch_key='train_test', index_unique=None)
-ccd.ul.run_umap(adata_merge, source_key='Concord', result_key='Concord_UMAP_2D', n_components=2, n_neighbors=30, min_dist=0.5, metric='euclidean', random_state=seed)
+ccd.ul.run_umap(adata_merge, source_key='Concord', result_key='Concord_UMAP_2D', n_components=2, n_neighbors=30, min_dist=0.5, metric='cosine', random_state=seed)
 
 color_by = [state_key, 'input_state', 'Concord_class_pred', 'train_test']
 show_basis = 'Concord_UMAP_2D'   
