@@ -1474,7 +1474,11 @@ In this quick-start example, we'll demonstrate CONCORD using the <code>pbmc3k</c
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a># cur_ccd = ccd.Concord(adata=adata, input_feature=feature_list, domain_key=&#39;batch&#39;, device=device, preload_dense=True) 
 </code></pre></div>
 <h3 id="visualization">Visualization:</h3>
-<p>CONCORD latent embeddings can be directly used for downstream analyses such as visualization with UMAP and t-SNE or constructing k-nearest neighbor (kNN) graphs. Unlike PCA, it is important to utilize the full CONCORD latent embedding in downstream analyses, as each dimension is designed to capture meaningful and complementary aspects of the underlying data structure.</p>
+<p>CONCORD latent embeddings are designed for direct use in UMAP, t-SNE, or kNN graph construction.</p>
+<ul>
+<li>Use all dimensions: Unlike PCA, do not subset the latent space; use the full embedding for all downstream tasks.</li>
+<li>Use cosine distance: We strongly recommend using cosine distance (metric='cosine') rather than cosine distance to remain consistent with the contrastive objective used during training.</li>
+</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">)</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># Plot the UMAP embeddings</span>
