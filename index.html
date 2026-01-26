@@ -1477,7 +1477,7 @@ In this quick-start example, we'll demonstrate CONCORD using the <code>pbmc3k</c
 <p>CONCORD latent embeddings are designed for direct use in UMAP, t-SNE, or kNN graph construction.</p>
 <ul>
 <li>Use all dimensions: Unlike PCA, do not subset the latent space; use the full embedding for all downstream tasks.</li>
-<li>Use cosine distance: We strongly recommend using cosine distance (metric='cosine') rather than cosine distance to remain consistent with the contrastive objective used during training.</li>
+<li>Distance: We recommend using cosine distance (metric='cosine') rather than Euclidean distance.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">ccd</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">source_key</span><span class="o">=</span><span class="s1">&#39;Concord&#39;</span><span class="p">,</span> <span class="n">result_key</span><span class="o">=</span><span class="s1">&#39;Concord_UMAP&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">)</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
